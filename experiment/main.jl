@@ -1,6 +1,7 @@
 using TSPDrone 
 using TSPLIB
 using Concorde
+using Statistics
 
 function read_data(subfolder, instance)
     file = open(joinpath(@__DIR__, "..", subfolder, instance), "r")
@@ -58,67 +59,87 @@ function test_TSPLIB100()
     end
 end
 
-function test_agatz(;n_samples=1, device="cpu")
+function test_agatz(dist, n_nodes; n_samples=0, device="cpu")
     filenames = Dict()
-    filenames[20] = ["uniform-$(60 + i)-n20.txt" for i in 1:10]
-    filenames[50] = ["uniform-$(70 + i)-n50.txt" for i in 1:10]
-    filenames[100] = ["uniform-$(90 + i)-n100.txt" for i in 1:10]
-
-    n_groups = Dict()
-    n_groups[20] = 1
-    n_groups[50] = 2
-    n_groups[100] = 4
-
-    n_nodes = [20, 50, 100]
+    filenames[10] = ["$(dist)-$(50 + i)-n10.txt" for i in 1:10]
+    filenames[20] = ["$(dist)-$(60 + i)-n20.txt" for i in 1:10]
+    filenames[50] = ["$(dist)-$(70 + i)-n50.txt" for i in 1:10]
+    filenames[75] = ["$(dist)-$(80 + i)-n75.txt" for i in 1:10]
+    filenames[100] = ["$(dist)-$(90 + i)-n100.txt" for i in 1:10]
+    filenames[175] = ["$(dist)-$(100 + i)-n175.txt" for i in 1:10]
+    filenames[250] = ["$(dist)-$(110 + i)-n250.txt" for i in 1:10]
 
     for n in n_nodes
-        n_grp = n_groups[n]
+        n_grp = n < 25 ? 1 : Int(n / 25)
+        # n_grp = 1
+        
         objs = Float64[]
         objs_RL = Float64[]
 
-        t = time()
+        if n_samples == 0
+            t = time()
+            for filename in filenames[n]
+                x, y, truck_cost_factor, drone_cost_factor = read_data(dist, filename)
+                
+                # manhattan_dist_mtx = [abs(x[i]-x[j]) + abs(y[i]-y[j]) for i in 1:n, j in 1:n]
+                # euclidean_dist_mtx = [sqrt((x[i]-x[j])^2 + (y[i]-y[j])^2) for i in 1:n, j in 1:n]
+                
+                # truck_dist_mtx = euclidean_dist_mtx ./ 40 .* 100
+                # drone_dist_mtx = manhattan_dist_mtx ./ 40 ./ 2 .* 100
 
-        for filename in filenames[n]
-            @info("Solving $filename by DPS")
-            x, y, truck_cost_factor, drone_cost_factor = read_data("uniform", filename)
-            
-            objective_value, truck_route, drone_route = solve_tspd(x, y, truck_cost_factor, drone_cost_factor, n_groups=n_grp, method="TSP-ep-all")
-            push!(objs, objective_value)
-        end
-        t_dps = time() - t
+                # objective_value, truck_route, drone_route = solve_tspd(truck_dist_mtx, drone_dist_mtx; n_groups=n_grp, method="TSP-ep-all")
 
-        open("uniform-n$n-DPS.txt", "w") do io 
-            println(io, objs)
-            println(io, mean(objs))
-            println(io, t_dps / 10)
-        end
+                obj, _, _ = solve_tspd(x, y, truck_cost_factor, drone_cost_factor; n_groups=n_grp, method="TSP-ep-all")
+                @show filename, obj, n_grp
+                push!(objs, obj)
+            end
+            t_dps = time() - t
 
-
-        t = time()
-        for filename in filenames[n]
-            @info("Solving $filename by RL")
-            x, y, truck_cost_factor, drone_cost_factor = read_data("uniform", filename)
-
-            @assert truck_cost_factor / drone_cost_factor == 2.0
-            obj_value, truck_route, drone_route = solve_tspd_RL(x, y, n_samples=n_samples, device=device)
-            push!(objs_RL, obj_value[1])
-        end
-        t_rl = time() - t
-
-        open("uniform-n$n-RL.txt", "w") do io
-            println(io, objs_RL)
-            println(io, mean(objs_RL))
-            println(io, t_rl / 10)
+            open("$(dist)-n$n-DPS-n_groups_$(n_grp).txt", "w") do io 
+                println(io, objs)
+                println(io, mean(objs))
+                println(io, t_dps / 10)
+            end
         end
 
-        println("n = $(n), mean(DPS)= $(mean(objs)), mean(RL) = $(mean(objs_RL))")
+        if n_samples > 0
+
+            t = time()
+            for filename in filenames[n]
+                x, y, truck_cost_factor, drone_cost_factor = read_data(dist, filename)
+
+                @assert truck_cost_factor / drone_cost_factor == 2.0
+                obj_value, _, _ = solve_tspd_RL(x, y, n_samples=n_samples, device=device)
+                @show filename, obj_value, n_grp
+                push!(objs_RL, obj_value[1])
+            end
+            t_rl = time() - t
+
+            open("$(dist)-n$n-RL-n_samples_$(n_samples).txt", "w") do io
+                println(io, objs_RL)
+                println(io, mean(objs_RL))
+                println(io, t_rl / 10)
+            end
+
+        end
+
+        println("n = $(n), mean(DPS25)= $(mean(objs)), mean(RL) = $(mean(objs_RL))")
 
     end
 
 end
 
-test_agatz(n_samples=1, device="cpu")
+#test_agatz(n_samples=1, device="cpu")
+
+# test_agatz("uniform", [10, 20, 50, 75, 100, 175, 250]; n_samples=0, device="cuda")
+# test_agatz("singlecenter", [10, 20, 50, 75, 100, 175, 250]; n_samples=0, device="cuda")
+# test_agatz("doublecenter", [10, 20, 50, 75, 100, 175, 250]; n_samples=0, device="cuda")
+
+# test_agatz("uniform", [20, 50, 100]; n_samples=1, device="cuda")
+# test_agatz("singlecenter", [20, 50, 100]; n_samples=1, device="cuda")
+# test_agatz("doublecenter", [20, 50, 100]; n_samples=1, device="cuda")
 
 
-# Please run 
-# test_agatz(n_samples=1, device="cpu")
+# Please run these:
+test_agatz("uniform", [20, 50, 100]; n_samples=1, device="cuda")
+test_agatz("uniform", [20, 50, 100]; n_samples=4800, device="cuda")
