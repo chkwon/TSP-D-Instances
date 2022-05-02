@@ -51,7 +51,7 @@ end
 
 #solve it using formulation by Gurobi
 using JuMP, Gurobi
-function formulation(truck_cost_mtx, drone_cost_mtx, N, e, Time_limit, M)
+function formulation(truck_cost_mtx, drone_cost_mtx, N, e, M)
     tT = hcat(truck_cost_mtx, truck_cost_mtx[:,1]) #add colummn i->N+1
     tD = hcat(drone_cost_mtx, drone_cost_mtx[:,1]) 
     #M = 1e3 #big-M
@@ -64,7 +64,7 @@ function formulation(truck_cost_mtx, drone_cost_mtx, N, e, Time_limit, M)
 
     
     m = Model(() -> Gurobi.Optimizer(gurobi_env))
-    set_optimizer_attribute(m, "TimeLimit", Time_limit)
+    # set_optimizer_attribute(m, "TimeLimit", Time_limit)
     #set_optimizer_attribute(m, "IntFeasTol", 1e-9)
     set_optimizer_attribute(m, "Outputflag", 0)
     

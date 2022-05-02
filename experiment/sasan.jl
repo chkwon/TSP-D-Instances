@@ -1,11 +1,11 @@
 using JuMP, Gurobi
 
-function solve_Optimal_TSPd(TT, DD, flying_range)
+function solve_Optimal_TSPd(TT, DD, flying_range, bigM)
     model = Model(() -> Gurobi.Optimizer(gurobi_env))
     set_silent(model)
     m = size(TT)[1]
     n_nodes = m-2
-    bigM = 20000
+    
     @variable(model, xT[1:m,1:m]>=0, Bin)
     @variable(model, xD[1:m,1:m]>=0, Bin)
     @variable(model, yT[2:m-1] >= 0, Bin) 

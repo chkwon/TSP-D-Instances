@@ -75,16 +75,20 @@ function test_agatz_range(n_nodes; n_samples=0, device="cpu")
                 result = solve_tspd(x, y, truck_cost_factor, drone_cost_factor; n_groups=n_grp, method="TSP-ep-all", flying_range=flying_range)
                 push!(objs, result.total_cost)
 
-                Ct, Cd = TSPDrone.cost_matrices_with_dummy(x, y, truck_cost_factor, drone_cost_factor)
-                xT_out, xD_out, yT_out, yD_out, yC_out, a_out, obj_val = solve_Optimal_TSPd(Ct, Cd, flying_range)
+                bigM = 1e4
 
-                Gurobi_time, Gurobi_sol, Gurobi_tr, Gurobi_dr = formulation(Ct[1:end-1,1:end-1], Ct[1:end-1, 1:end-1], length(x), flying_range, 10000, 1e5)
+                Ct, Cd = TSPDrone.cost_matrices_with_dummy(x, y, truck_cost_factor, drone_cost_factor)
+                xT_out, xD_out, yT_out, yD_out, yC_out, a_out, obj_val = solve_Optimal_TSPd(Ct, Cd, flying_range, bigM)
+
+                Gurobi_time, Gurobi_sol, Gurobi_tr, Gurobi_dr = formulation(Ct[1:end-1,1:end-1], Ct[1:end-1, 1:end-1], length(x), flying_range, bigM)
 
                 @info filename
                 @show flying_range
                 println("TSP-ep-all = ", result.total_cost)
                 println("sasan      = ", obj_val)
                 println("xufei      = ", Gurobi_sol)
+                if result.total_cost < obj_val
+                    
 
             end
             t_dps = time() - t
