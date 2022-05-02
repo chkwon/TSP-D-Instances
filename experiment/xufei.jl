@@ -51,11 +51,12 @@ end
 
 #solve it using formulation by Gurobi
 using JuMP, Gurobi
-function formulation(truck_cost_mtx, drone_cost_mtx, N, e, M)
-    tT = hcat(truck_cost_mtx, truck_cost_mtx[:,1]) #add colummn i->N+1
-    tD = hcat(drone_cost_mtx, drone_cost_mtx[:,1]) 
+#function formulation(truck_cost_mtx, drone_cost_mtx, N, e, M)
+function formulation(tT, tD, N, e, M, visit_type)
+    #tT = hcat(truck_cost_mtx, truck_cost_mtx[:,1]) #add colummn i->N+1
+    #tD = hcat(drone_cost_mtx, drone_cost_mtx[:,1]) 
     #M = 1e3 #big-M
-    
+
     V = Set(collect(1:N)) #V = {1,2,...,N}
     V1 = delete!(deepcopy(V),1) # V1 = {2,3,..,N}
     V2 = deepcopy(V)
@@ -64,7 +65,7 @@ function formulation(truck_cost_mtx, drone_cost_mtx, N, e, M)
 
     
     m = Model(() -> Gurobi.Optimizer(gurobi_env))
-    # set_optimizer_attribute(m, "TimeLimit", Time_limit)
+    #set_optimizer_attribute(m, "TimeLimit", Time_limit)
     #set_optimizer_attribute(m, "IntFeasTol", 1e-9)
     set_optimizer_attribute(m, "Outputflag", 0)
     
@@ -96,23 +97,29 @@ function formulation(truck_cost_mtx, drone_cost_mtx, N, e, M)
     for i in V1
         for j in V1
             if i!=j
-                @constraint(m, xD[(i,j)] + xD[(j,i)] <= yC[i] + yC[j] + 2*(1-α[i,j]) )
-                @constraint(m, xD[(i,j)] + xD[(j,i)] <= yD[i] + yD[j] + 2*α[i,j] ) 
+                if visit_type == "single"
+                    @constraint(m, xD[(i,j)] + xD[(j,i)] <= yC[i] + yC[j] )  # serve single customer in one flight operation
+                end
+                if visit_type == "multiple"                                  # serve multiple customers in one flight operation
+                    @constraint(m, xD[(i,j)] + xD[(j,i)] <= yC[i] + yC[j] + 2*(1-α[i,j]) )
+                    @constraint(m, xD[(i,j)] + xD[(j,i)] <= yD[i] + yD[j] + 2*α[i,j] ) 
+                end
             end
         end
     end
     @constraint(m, [i in V1], sum(xT[(ii,j)] for (ii,j) in A if ii==i) == yT[i] + yC[i])
     @constraint(m, [i in V1], sum(xD[(ii,j)] for (ii,j) in A if ii==i) == yD[i] + yC[i])
     
-    #Subtour elimination
-    for i in V1
-        for j in V1
-            if i!=j
-            @constraint(m, nT[j] >= nT[i] + N*xT[(i,j)] - (N-1)) #subtour elimination for the truck route
-            @constraint(m, nD[j] >= nD[i] + N*xD[(i,j)] - (N-1)) #subtour elimination for the drone route
-            end
-        end
-    end
+    #Subtour elimination 
+    #Don't need to avoid subtour when the cost matrix > 0. 
+    #for i in V1
+    #    for j in V1
+    #        if i!=j
+    #        @constraint(m, nT[j] >= nT[i] + N*xT[(i,j)] - (N-1)) #subtour elimination for the truck route
+    #        @constraint(m, nD[j] >= nD[i] + N*xD[(i,j)] - (N-1)) #subtour elimination for the drone route
+    #        end
+    #    end
+    #end
     
     #Arrival Time
     @constraint(m, [(i,j) in A], a[i] + tT[i,j] <= a[j] + M*(1-xT[(i,j)]))
@@ -124,15 +131,19 @@ function formulation(truck_cost_mtx, drone_cost_mtx, N, e, M)
     for (i,j) in A
         if tD[i,j] > e
              @constraint(m, xD[(i,j)] <= xT[(i,j)])
-         end
-         @constraint(m, f[j] >= f[i] + tD[i,j]*xD[(i,j)] - M*(1-xD[(i,j)]) - M*xT[(i,j)])
-     end
- 
-     for i in V2
-         @constraint(m, f[i] <= e)
-     end
+        end
+    end
+    
+    if visit_type == "single"
+        @constraint(m, [i in V1], sum(tD[j,ii]*xD[(j,ii)] for (j,ii) in A if ii==i) + sum(tD[ii,k]*xD[(ii,k)] for (ii,k) in A if ii==i) <= e + M*(1-yD[i]))
+    end
 
-
+    if visit_type == "multiple"
+        for (i,j) in A
+            @constraint(m, f[j] >= f[i] + tD[i,j] - M*(1-xD[(i,j)]) - M*xT[(i,j)])
+        end
+        @constraint(m, [i in V2], f[i] <= e)
+    end
 
     time = @timed optimize!(m)
     #@show raw_status(m)

@@ -6,6 +6,39 @@ using Statistics
 include("sasan.jl")
 include("xufei.jl")
 
+###########################################
+function sasan_TSP_route(X)
+    n = size(X)[1]
+    p = Set()
+    for i in 1:n
+        for j in 1:n
+            if abs(X[i,j]-1.0) < 1e-5
+                push!(p, (i,j))
+            end
+        end
+    end
+
+    start = []
+    end_v = []
+    for (i,j) in p
+        push!(start,i)
+        push!(end_v,j)
+    end
+
+    path = [1]
+    next = findfirst(isequal(1), start)
+    push!(path, end_v[next])
+
+    for i in 1:length(start)-1
+        now = path[end]
+        next = findfirst(isequal(now), start)
+        push!(path, end_v[next])
+    end
+    return path
+end
+############################################
+
+
 function read_data_range(subfolder, instance)
     file = open(joinpath(@__DIR__, "..", subfolder, instance), "r")
 
@@ -72,24 +105,43 @@ function test_agatz_range(n_nodes; n_samples=0, device="cpu")
 
                 # objective_value, truck_route, drone_route = solve_tspd(truck_dist_mtx, drone_dist_mtx; n_groups=n_grp, method="TSP-ep-all")
 
-                result = solve_tspd(x, y, truck_cost_factor, drone_cost_factor; n_groups=n_grp, method="TSP-ep-all", flying_range=flying_range)
+                tspd_time = @timed result = solve_tspd(x, y, truck_cost_factor, drone_cost_factor; n_groups=n_grp, method="TSP-ep-all", flying_range=flying_range)
                 push!(objs, result.total_cost)
 
                 bigM = 1e4
 
                 Ct, Cd = TSPDrone.cost_matrices_with_dummy(x, y, truck_cost_factor, drone_cost_factor)
-                xT_out, xD_out, yT_out, yD_out, yC_out, a_out, obj_val = solve_Optimal_TSPd(Ct, Cd, flying_range, bigM)
+                sasan_time = @timed xT_out, xD_out, yT_out, yD_out, yC_out, a_out, obj_val = solve_Optimal_TSPd(Ct, Cd, flying_range, bigM) 
 
-                Gurobi_time, Gurobi_sol, Gurobi_tr, Gurobi_dr = formulation(Ct[1:end-1,1:end-1], Ct[1:end-1, 1:end-1], length(x), flying_range, bigM)
+                visit_type = "single" # choose from ("single", "multiple")
+                Gurobi_time, Gurobi_sol, Gurobi_tr, Gurobi_dr = formulation(Ct, Cd, length(x), flying_range, bigM, visit_type)
+                #visit_type: "single" (serve one customer in one flight operation); "multiple" (serve multiple customer in one flight operation)
 
+                #@info filename
+                #@show flying_range
+                #println("TSP-ep-all = ", result.total_cost)
+                #println("sasan      = ", obj_val)
+                #println("xufei      = ", Gurobi_sol)
+       
                 @info filename
                 @show flying_range
-                println("TSP-ep-all = ", result.total_cost)
-                println("sasan      = ", obj_val)
-                println("xufei      = ", Gurobi_sol)
-                if result.total_cost < obj_val
-                    
+                println("TSP-ep-all   = ", result.total_cost)
+                #println("truck: ", result.truck_route)
+                #println("drone: ", result.drone_route)
 
+                println("sasan        = ", obj_val)
+                #sasan_tr, sasan_dr = sasan_TSP_route(xT_out),  sasan_TSP_route(xD_out)
+                #println("truck: ", sasan_tr)
+                #println("drone: ", sasan_dr)
+                
+                println("xufei $(visit_type) = ", Gurobi_sol)
+                #println("truck: ", Gurobi_tr)
+                #println("drone: ", Gurobi_dr)
+
+                println("TSP-ep-all time = ", tspd_time.time)
+                println("sasan run time  = ", sasan_time.time)
+                println("xufei run time  = ", Gurobi_time.time)
+   
             end
             t_dps = time() - t
 
