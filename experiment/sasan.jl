@@ -28,7 +28,7 @@ function solve_Optimal_TSPd(TT, DD, flying_range, bigM)
     @constraint(model, sum(xD[j,m] for j=1:m ) == 1)   #(1g)
 
     for i=2:m-1   #customer nodes
-        @constraint(model, yD[i] + yC[i] + sum(z[j,i] for j=1:m-1) <= z0[i])    #If drone does a single loop with depot, then the rest of the nodes will be truck nodes
+        @constraint(model, sum(yD[k] + yC[k] + sum(z[j,k] for j=1:m-1) for k=2:m-1) <= 1-z0[i])    #If drone does a single loop with depot, then the rest of the nodes will be truck nodes
         @constraint(model, sum(xT[i,j] for j=1:m ) == sum(xT[j,i] for j=1:m ))   #(1b)
         @constraint(model, sum(xT[i,j] for j=1:m ) == yT[i]+yC[i] )              #(1c)
         @constraint(model, sum(xD[i,j] for j=1:m ) == sum(xD[j,i] for j=1:m ))   #(1e)
