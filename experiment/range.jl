@@ -84,6 +84,12 @@ function test_agatz_range(n_nodes; n_samples=0, device="cpu")
     filenames = Dict()
     radii = [20, 40, 60, 100, 150, 200]
     filenames[10] = ["uniform-$(50+i)-n10-maxradius-$r.txt" for i in 1:10 for r in radii]
+    
+    radii = [5, 10, 15, 20, 30, 40, 50]
+    filenames[20] = ["uniform-$(60+i)-n20-maxradius-$r.txt" for i in 1:10 for r in radii]
+    
+    radii = [20]
+    filenames[50] = ["uniform-$(70+i)-n50-maxradius-$r.txt" for i in 1:10 for r in radii]
 
     for n in n_nodes
         # n_grp = n < 25 ? 1 : Int(n / 25)
@@ -111,10 +117,10 @@ function test_agatz_range(n_nodes; n_samples=0, device="cpu")
                 bigM = 1e4
 
                 Ct, Cd = TSPDrone.cost_matrices_with_dummy(x, y, truck_cost_factor, drone_cost_factor)
-                sasan_time = @timed xT_out, xD_out, yT_out, yD_out, yC_out, a_out, obj_val = solve_Optimal_TSPd(Ct, Cd, flying_range, bigM) 
+                # sasan_time = @timed xT_out, xD_out, yT_out, yD_out, yC_out, a_out, obj_val = solve_Optimal_TSPd(Ct, Cd, flying_range, bigM) 
 
                 visit_type = "single" # choose from ("single", "multiple")
-                Gurobi_time, Gurobi_sol, Gurobi_tr, Gurobi_dr = formulation(Ct, Cd, length(x), flying_range, bigM, visit_type)
+                # Gurobi_time, Gurobi_sol, Gurobi_tr, Gurobi_dr = formulation(Ct, Cd, length(x), flying_range, bigM, visit_type)
                 #visit_type: "single" (serve one customer in one flight operation); "multiple" (serve multiple customer in one flight operation)
 
                 #@info filename
@@ -125,23 +131,27 @@ function test_agatz_range(n_nodes; n_samples=0, device="cpu")
        
                 @info filename
                 @show flying_range
+
                 println("TSP-ep-all   = ", result.total_cost)
                 #println("truck: ", result.truck_route)
                 #println("drone: ", result.drone_route)
 
-                println("sasan        = ", obj_val)
+                # println("sasan        = ", obj_val)
                 #sasan_tr, sasan_dr = sasan_TSP_route(xT_out),  sasan_TSP_route(xD_out)
                 #println("truck: ", sasan_tr)
                 #println("drone: ", sasan_dr)
                 
-                println("xufei $(visit_type) = ", Gurobi_sol)
+                # println("xufei $(visit_type) = ", Gurobi_sol)
                 #println("truck: ", Gurobi_tr)
                 #println("drone: ", Gurobi_dr)
 
                 println("TSP-ep-all time = ", tspd_time.time)
-                println("sasan run time  = ", sasan_time.time)
-                println("xufei run time  = ", Gurobi_time.time)
-   
+                # println("sasan run time  = ", sasan_time.time)
+                # println("xufei run time  = ", Gurobi_time.time)
+
+                println("TSP-ep-all solution summary:")
+                print_summary(result)
+                println("===========================================================================")
             end
             t_dps = time() - t
 
@@ -162,4 +172,4 @@ end
 
 gurobi_env = Gurobi.Env()
 
-test_agatz_range(10)
+test_agatz_range(50)

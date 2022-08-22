@@ -146,7 +146,7 @@ function formulation(tT, tD, N, e, M, visit_type)
     end
 
     time = @timed optimize!(m)
-    #@show raw_status(m)
+    @show raw_status(m)
     Tr = value.(xT)
     Dr = value.(xD)
     yT = value.(yT)

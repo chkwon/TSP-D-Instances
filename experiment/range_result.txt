@@ -1,0 +1,2115 @@
+ ~/Documents/GitHub/TSP-D-Instances   work_xf ±
+ julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.7.2 (2022-02-06)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> include("experiment/range.jl")
+Academic license - for non-commercial use only - expires 2022-08-26
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-51-n10-maxradius-20.txt
+flying_range = 10.31746092796091
+TSP-ep-all   = 301.1840246080579
+sasan        = 301.1840246080578
+xufei single = 301.1840246080578
+TSP-ep-all time = 2.018323435
+sasan run time  = 6.109877146
+xufei run time  = 0.256076809
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 42.37636133363842 : [1, 3]
+  - Drone        = 0.0 : [1, 3]
+  - Length       = 42.37636133363842
+Operation #2:
+  - Truck        = 31.016124838541646 : [3, 9]
+  - Drone        = 0.0 : [3, 9]
+  - Length       = 31.016124838541646
+Operation #3:
+  - Truck        = 37.94733192202055 : [9, 6]
+  - Drone        = 0.0 : [9, 6]
+  - Length       = 37.94733192202055
+Operation #4:
+  - Truck        = 9.486832980505138 : [6, 10]
+  - Drone        = 0.0 : [6, 10]
+  - Length       = 9.486832980505138
+Operation #5:
+  - Truck        = 22.20360331117452 : [10, 2]
+  - Drone        = 0.0 : [10, 2]
+  - Length       = 22.20360331117452
+Operation #6:
+  - Truck        = 38.897300677553446 : [2, 5]
+  - Drone        = 0.0 : [2, 5]
+  - Length       = 38.897300677553446
+Operation #7:
+  - Truck        = 23.345235059857504 : [5, 4]
+  - Drone        = 0.0 : [5, 4]
+  - Length       = 23.345235059857504
+Operation #8:
+  - Truck        = 3.1622776601683795 : [4, 8]
+  - Drone        = 0.0 : [4, 8]
+  - Length       = 3.1622776601683795
+Operation #9:
+  - Truck        = 60.530983801686226 : [8, 7]
+  - Drone        = 0.0 : [8, 7]
+  - Length       = 60.530983801686226
+Operation #10:
+  - Truck        = 32.217973022912055 : [7, 11]
+  - Drone        = 0.0 : [7, 11]
+  - Length       = 32.217973022912055
+Total Cost = 301.1840246080579
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-51-n10-maxradius-40.txt
+flying_range = 20.63492185592182
+TSP-ep-all   = 291.81673281891557
+sasan        = 291.81673281891557
+xufei single = 291.81673281891557
+TSP-ep-all time = 0.034000983
+sasan run time  = 0.303130029
+xufei run time  = 0.213452417
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 42.37636133363842 : [1, 3]
+  - Drone        = 0.0 : [1, 3]
+  - Length       = 42.37636133363842
+Operation #2:
+  - Truck        = 31.016124838541646 : [3, 9]
+  - Drone        = 0.0 : [3, 9]
+  - Length       = 31.016124838541646
+Operation #3:
+  - Truck        = 37.94733192202055 : [9, 6]
+  - Drone        = 0.0 : [9, 6]
+  - Length       = 37.94733192202055
+Operation #4:
+  - Truck        = 26.627053911388696 : [6, 2]
+  - Drone        = 15.845218145839828 : [6, 10, 2]
+  - Length       = 26.627053911388696
+Operation #5:
+  - Truck        = 38.897300677553446 : [2, 5]
+  - Drone        = 0.0 : [2, 5]
+  - Length       = 38.897300677553446
+Operation #6:
+  - Truck        = 22.20360331117452 : [5, 8]
+  - Drone        = 13.253756360012941 : [5, 4, 8]
+  - Length       = 22.20360331117452
+Operation #7:
+  - Truck        = 60.530983801686226 : [8, 7]
+  - Drone        = 0.0 : [8, 7]
+  - Length       = 60.530983801686226
+Operation #8:
+  - Truck        = 32.217973022912055 : [7, 11]
+  - Drone        = 0.0 : [7, 11]
+  - Length       = 32.217973022912055
+Total Cost = 291.81673281891557
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-51-n10-maxradius-60.txt
+flying_range = 30.95238278388273
+TSP-ep-all   = 291.81673281891557
+sasan        = 291.8167328189138
+xufei single = 291.81673281891557
+TSP-ep-all time = 0.035104947
+sasan run time  = 0.69881706
+xufei run time  = 0.345595754
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 42.37636133363842 : [1, 3]
+  - Drone        = 0.0 : [1, 3]
+  - Length       = 42.37636133363842
+Operation #2:
+  - Truck        = 31.016124838541646 : [3, 9]
+  - Drone        = 0.0 : [3, 9]
+  - Length       = 31.016124838541646
+Operation #3:
+  - Truck        = 37.94733192202055 : [9, 6]
+  - Drone        = 0.0 : [9, 6]
+  - Length       = 37.94733192202055
+Operation #4:
+  - Truck        = 26.627053911388696 : [6, 2]
+  - Drone        = 15.845218145839828 : [6, 10, 2]
+  - Length       = 26.627053911388696
+Operation #5:
+  - Truck        = 38.897300677553446 : [2, 5]
+  - Drone        = 0.0 : [2, 5]
+  - Length       = 38.897300677553446
+Operation #6:
+  - Truck        = 22.20360331117452 : [5, 8]
+  - Drone        = 13.253756360012941 : [5, 4, 8]
+  - Length       = 22.20360331117452
+Operation #7:
+  - Truck        = 60.530983801686226 : [8, 7]
+  - Drone        = 0.0 : [8, 7]
+  - Length       = 60.530983801686226
+Operation #8:
+  - Truck        = 32.217973022912055 : [7, 11]
+  - Drone        = 0.0 : [7, 11]
+  - Length       = 32.217973022912055
+Total Cost = 291.81673281891557
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-51-n10-maxradius-100.txt
+flying_range = 51.58730463980455
+TSP-ep-all   = 251.68666596801242
+sasan        = 251.68666594272509
+xufei single = 251.68666596801472
+TSP-ep-all time = 0.036752575
+sasan run time  = 2.853807496
+xufei run time  = 0.89217676
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 32.217973022912055 : [1, 7]
+  - Drone        = 0.0 : [1, 7]
+  - Length       = 32.217973022912055
+Operation #2:
+  - Truck        = 53.71219600798314 : [7, 5]
+  - Drone        = 43.49242268332339 : [7, 4, 5]
+  - Length       = 53.71219600798314
+Operation #3:
+  - Truck        = 38.897300677553446 : [5, 2]
+  - Drone        = 41.30941658957369 : [5, 8, 2]
+  - Length       = 41.30941658957369
+Operation #4:
+  - Truck        = 26.627053911388696 : [2, 6]
+  - Drone        = 15.845218145839828 : [2, 10, 6]
+  - Length       = 26.627053911388696
+Operation #5:
+  - Truck        = 55.44366510251645 : [6, 3]
+  - Drone        = 34.4817283802811 : [6, 9, 3]
+  - Length       = 55.44366510251645
+Operation #6:
+  - Truck        = 42.37636133363842 : [3, 11]
+  - Drone        = 0.0 : [3, 11]
+  - Length       = 42.37636133363842
+Total Cost = 251.68666596801242
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-51-n10-maxradius-150.txt
+flying_range = 77.38095695970682
+TSP-ep-all   = 250.72572489855756
+sasan        = 250.72572489855102
+xufei single = 250.72572487338567
+TSP-ep-all time = 0.137487759
+sasan run time  = 4.063636924
+xufei run time  = 1.184375657
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 84.96922796144031 : [1, 5]
+  - Drone        = 59.5857577836968 : [1, 4, 5]
+  - Length       = 84.96922796144031
+Operation #2:
+  - Truck        = 38.897300677553446 : [5, 2]
+  - Drone        = 41.30941658957369 : [5, 8, 2]
+  - Length       = 41.30941658957369
+Operation #3:
+  - Truck        = 26.627053911388696 : [2, 6]
+  - Drone        = 15.845218145839828 : [2, 10, 6]
+  - Length       = 26.627053911388696
+Operation #4:
+  - Truck        = 55.44366510251645 : [6, 3]
+  - Drone        = 34.4817283802811 : [6, 9, 3]
+  - Length       = 55.44366510251645
+Operation #5:
+  - Truck        = 42.37636133363842 : [3, 11]
+  - Drone        = 36.779013120050415 : [3, 7, 11]
+  - Length       = 42.37636133363842
+Total Cost = 250.72572489855756
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-51-n10-maxradius-200.txt
+flying_range = 1.0e6
+TSP-ep-all   = 250.72572489855756
+sasan        = 250.72572489839203
+xufei single = 250.72572487338238
+TSP-ep-all time = 0.046948957
+sasan run time  = 5.065697832
+xufei run time  = 1.245810022
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 84.96922796144031 : [1, 5]
+  - Drone        = 59.5857577836968 : [1, 4, 5]
+  - Length       = 84.96922796144031
+Operation #2:
+  - Truck        = 38.897300677553446 : [5, 2]
+  - Drone        = 41.30941658957369 : [5, 8, 2]
+  - Length       = 41.30941658957369
+Operation #3:
+  - Truck        = 26.627053911388696 : [2, 6]
+  - Drone        = 15.845218145839828 : [2, 10, 6]
+  - Length       = 26.627053911388696
+Operation #4:
+  - Truck        = 55.44366510251645 : [6, 3]
+  - Drone        = 34.4817283802811 : [6, 9, 3]
+  - Length       = 55.44366510251645
+Operation #5:
+  - Truck        = 42.37636133363842 : [3, 11]
+  - Drone        = 36.779013120050415 : [3, 7, 11]
+  - Length       = 42.37636133363842
+Total Cost = 250.72572489855756
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-52-n10-maxradius-20.txt
+flying_range = 11.651953221250249
+TSP-ep-all   = 303.87346969962573
+sasan        = 303.8734696996258
+xufei single = 303.8734696996256
+TSP-ep-all time = 0.033669923
+sasan run time  = 0.302381759
+xufei run time  = 0.19129278
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 41.32318992772943 : [1, 3]
+  - Drone        = 0.0 : [1, 3]
+  - Length       = 41.32318992772943
+Operation #2:
+  - Truck        = 13.152946437965905 : [3, 6]
+  - Drone        = 0.0 : [3, 6]
+  - Length       = 13.152946437965905
+Operation #3:
+  - Truck        = 20.615528128088304 : [6, 8]
+  - Drone        = 0.0 : [6, 8]
+  - Length       = 20.615528128088304
+Operation #4:
+  - Truck        = 36.05551275463989 : [8, 10]
+  - Drone        = 0.0 : [8, 10]
+  - Length       = 36.05551275463989
+Operation #5:
+  - Truck        = 30.528675044947494 : [10, 9]
+  - Drone        = 0.0 : [10, 9]
+  - Length       = 30.528675044947494
+Operation #6:
+  - Truck        = 2.23606797749979 : [9, 4]
+  - Drone        = 0.0 : [9, 4]
+  - Length       = 2.23606797749979
+Operation #7:
+  - Truck        = 36.40054944640259 : [4, 7]
+  - Drone        = 0.0 : [4, 7]
+  - Length       = 36.40054944640259
+Operation #8:
+  - Truck        = 69.33974329343886 : [7, 5]
+  - Drone        = 0.0 : [7, 5]
+  - Length       = 69.33974329343886
+Operation #9:
+  - Truck        = 34.66987164671943 : [5, 2]
+  - Drone        = 0.0 : [5, 2]
+  - Length       = 34.66987164671943
+Operation #10:
+  - Truck        = 19.55138504219408 : [2, 11]
+  - Drone        = 0.0 : [2, 11]
+  - Length       = 19.55138504219408
+Total Cost = 303.87346969962573
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-52-n10-maxradius-40.txt
+flying_range = 23.303906442500498
+TSP-ep-all   = 285.8232338526011
+sasan        = 285.64961835815456
+xufei single = 285.82323385258314
+TSP-ep-all time = 0.031062279
+sasan run time  = 0.556726515
+xufei run time  = 0.410390708
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 38.60321539518029 : [1, 6]
+  - Drone        = 0.0 : [1, 6]
+  - Length       = 38.60321539518029
+Operation #2:
+  - Truck        = 20.615528128088304 : [6, 8]
+  - Drone        = 20.789143622534848 : [6, 3, 8]
+  - Length       = 20.789143622534848
+Operation #3:
+  - Truck        = 66.46932540613099 : [8, 10, 4]
+  - Drone        = 22.141830030378536 : [8, 9, 4]
+  - Length       = 66.46932540613099
+Operation #4:
+  - Truck        = 36.40054944640259 : [4, 7]
+  - Drone        = 0.0 : [4, 7]
+  - Length       = 36.40054944640259
+Operation #5:
+  - Truck        = 69.33974329343886 : [7, 5]
+  - Drone        = 0.0 : [7, 5]
+  - Length       = 69.33974329343886
+Operation #6:
+  - Truck        = 34.66987164671943 : [5, 2]
+  - Drone        = 0.0 : [5, 2]
+  - Length       = 34.66987164671943
+Operation #7:
+  - Truck        = 19.55138504219408 : [2, 11]
+  - Drone        = 0.0 : [2, 11]
+  - Length       = 19.55138504219408
+Total Cost = 285.8232338526011
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-52-n10-maxradius-60.txt
+flying_range = 34.95585966375074
+TSP-ep-all   = 256.3438913961155
+sasan        = 251.4932652349554
+xufei single = 251.49326523495537
+TSP-ep-all time = 0.038154062
+sasan run time  = 2.081358521
+xufei run time  = 0.50414121
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 57.91659926305527 : [1, 8]
+  - Drone        = 29.6093717616343 : [1, 6, 8]
+  - Length       = 57.91659926305527
+Operation #2:
+  - Truck        = 42.04759208325728 : [8, 9]
+  - Drone        = 33.29209389979369 : [8, 10, 9]
+  - Length       = 42.04759208325728
+Operation #3:
+  - Truck        = 115.05651012207358 : [9, 4, 7, 3]
+  - Drone        = 32.50856184694781 : [9, 5, 3]
+  - Length       = 115.05651012207358
+Operation #4:
+  - Truck        = 41.32318992772943 : [3, 11]
+  - Drone        = 27.28283392110864 : [3, 2, 11]
+  - Length       = 41.32318992772943
+Total Cost = 256.3438913961155
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-52-n10-maxradius-100.txt
+flying_range = 58.25976610625124
+TSP-ep-all   = 193.90934377436844
+sasan        = 193.9093437743689
+xufei single = 193.90934377436744
+TSP-ep-all time = 0.049924594
+sasan run time  = 8.316692197
+xufei run time  = 2.279898765
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 41.32318992772943 : [1, 3]
+  - Drone        = 25.878080916573097 : [1, 6, 3]
+  - Length       = 41.32318992772943
+Operation #2:
+  - Truck        = 44.721359549995796 : [3, 9]
+  - Drone        = 43.424593203131195 : [3, 10, 9]
+  - Length       = 44.721359549995796
+Operation #3:
+  - Truck        = 50.32972660314398 : [9, 4, 5]
+  - Drone        = 53.643537607729705 : [9, 7, 5]
+  - Length       = 53.643537607729705
+Operation #4:
+  - Truck        = 54.22125668891351 : [5, 2, 11]
+  - Drone        = 51.76180813351039 : [5, 8, 11]
+  - Length       = 54.22125668891351
+Total Cost = 193.90934377436844
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-52-n10-maxradius-150.txt
+flying_range = 87.38964915937686
+TSP-ep-all   = 193.90934377436844
+sasan        = 191.32857498011586
+xufei single = 191.3285749801159
+TSP-ep-all time = 0.116639237
+sasan run time  = 8.700247404
+xufei run time  = 1.708462568
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 41.32318992772943 : [1, 3]
+  - Drone        = 25.878080916573097 : [1, 6, 3]
+  - Length       = 41.32318992772943
+Operation #2:
+  - Truck        = 44.721359549995796 : [3, 9]
+  - Drone        = 43.424593203131195 : [3, 10, 9]
+  - Length       = 44.721359549995796
+Operation #3:
+  - Truck        = 50.32972660314398 : [9, 4, 5]
+  - Drone        = 53.643537607729705 : [9, 7, 5]
+  - Length       = 53.643537607729705
+Operation #4:
+  - Truck        = 54.22125668891351 : [5, 2, 11]
+  - Drone        = 51.76180813351039 : [5, 8, 11]
+  - Length       = 54.22125668891351
+Total Cost = 193.90934377436844
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-52-n10-maxradius-200.txt
+flying_range = 1.0e6
+TSP-ep-all   = 193.90934377436844
+sasan        = 191.32857498011586
+xufei single = 191.32857498011572
+TSP-ep-all time = 0.059265865
+sasan run time  = 10.050133494
+xufei run time  = 1.307462801
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 41.32318992772943 : [1, 3]
+  - Drone        = 25.878080916573097 : [1, 6, 3]
+  - Length       = 41.32318992772943
+Operation #2:
+  - Truck        = 44.721359549995796 : [3, 9]
+  - Drone        = 43.424593203131195 : [3, 10, 9]
+  - Length       = 44.721359549995796
+Operation #3:
+  - Truck        = 50.32972660314398 : [9, 4, 5]
+  - Drone        = 53.643537607729705 : [9, 7, 5]
+  - Length       = 53.643537607729705
+Operation #4:
+  - Truck        = 54.22125668891351 : [5, 2, 11]
+  - Drone        = 51.76180813351039 : [5, 8, 11]
+  - Length       = 54.22125668891351
+Total Cost = 193.90934377436844
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-53-n10-maxradius-20.txt
+flying_range = 10.381347664137898
+TSP-ep-all   = 282.79696070505895
+sasan        = 282.79696070505895
+xufei single = 282.7969607050509
+TSP-ep-all time = 0.034882429
+sasan run time  = 0.087777695
+xufei run time  = 0.082811316
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 282.79696070505895 : [1, 3, 10, 2, 8, 4, 6, 9, 5, 11]
+  - Drone        = 6.536346428986322 : [1, 7, 11]
+  - Length       = 282.79696070505895
+Total Cost = 282.79696070505895
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-53-n10-maxradius-40.txt
+flying_range = 20.762695328275797
+TSP-ep-all   = 282.6306955349501
+sasan        = 282.6306955349502
+xufei single = 282.6306955349502
+TSP-ep-all time = 0.029427794
+sasan run time  = 0.241475745
+xufei run time  = 0.265570448
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 33.615811377867935 : [1, 10]
+  - Drone        = 16.891038273988354 : [1, 3, 10]
+  - Length       = 33.615811377867935
+Operation #2:
+  - Truck        = 249.01488415708224 : [10, 2, 8, 4, 6, 9, 5, 11]
+  - Drone        = 17.76817321449316 : [10, 7, 11]
+  - Length       = 249.01488415708224
+Total Cost = 282.6306955349502
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-53-n10-maxradius-60.txt
+flying_range = 31.144042992413695
+TSP-ep-all   = 278.25282901856303
+sasan        = 278.2528290185631
+xufei single = 278.2528290185631
+TSP-ep-all time = 0.041641395
+sasan run time  = 0.188322709
+xufei run time  = 0.194683761
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 33.615811377867935 : [1, 10]
+  - Drone        = 16.891038273988354 : [1, 3, 10]
+  - Length       = 33.615811377867935
+Operation #2:
+  - Truck        = 186.3130152592423 : [10, 8, 4, 6, 9]
+  - Drone        = 26.621562336550042 : [10, 2, 9]
+  - Length       = 186.3130152592423
+Operation #3:
+  - Truck        = 35.22782990761707 : [9, 5]
+  - Drone        = 0.0 : [9, 5]
+  - Length       = 35.22782990761707
+Operation #4:
+  - Truck        = 23.096172473835775 : [5, 11]
+  - Drone        = 14.811569595108356 : [5, 7, 11]
+  - Length       = 23.096172473835775
+Total Cost = 278.2528290185631
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-53-n10-maxradius-100.txt
+flying_range = 51.90673832068949
+TSP-ep-all   = 211.49437199307556
+sasan        = 211.4943719930757
+xufei single = 211.49437199303344
+TSP-ep-all time = 0.036724225
+sasan run time  = 1.038436478
+xufei run time  = 0.690099908
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 33.615811377867935 : [1, 10]
+  - Drone        = 22.59344725410515 : [1, 5, 10]
+  - Length       = 33.615811377867935
+Operation #2:
+  - Truck        = 70.21395872616783 : [10, 4]
+  - Drone        = 50.65716589968791 : [10, 6, 4]
+  - Length       = 70.21395872616783
+Operation #3:
+  - Truck        = 58.008620049092706 : [4, 2]
+  - Drone        = 47.59689410704645 : [4, 8, 2]
+  - Length       = 58.008620049092706
+Operation #4:
+  - Truck        = 47.777345132612936 : [2, 3, 7, 11]
+  - Drone        = 49.655981839947074 : [2, 9, 11]
+  - Length       = 49.655981839947074
+Total Cost = 211.49437199307556
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-53-n10-maxradius-150.txt
+flying_range = 77.86010748103423
+TSP-ep-all   = 192.155989041875
+sasan        = 192.1559890225518
+xufei single = 192.15598904187448
+TSP-ep-all time = 0.120891998
+sasan run time  = 5.46499717
+xufei run time  = 1.997304098
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 47.84787521926282 : [1, 7, 3, 10, 2]
+  - Drone        = 49.655981839947074 : [1, 9, 2]
+  - Length       = 49.655981839947074
+Operation #2:
+  - Truck        = 50.80354318352215 : [2, 6]
+  - Drone        = 49.61983815263466 : [2, 4, 6]
+  - Length       = 50.80354318352215
+Operation #3:
+  - Truck        = 91.69646401840576 : [6, 5, 11]
+  - Drone        = 76.5881625311613 : [6, 8, 11]
+  - Length       = 91.69646401840576
+Total Cost = 192.155989041875
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-53-n10-maxradius-200.txt
+flying_range = 1.0e6
+TSP-ep-all   = 192.155989041875
+sasan        = 192.1559890418739
+xufei single = 192.15598902255806
+TSP-ep-all time = 0.050109607
+sasan run time  = 7.351242191
+xufei run time  = 2.02767464
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 91.69646401840576 : [1, 5, 6]
+  - Drone        = 76.5881625311613 : [1, 8, 6]
+  - Length       = 91.69646401840576
+Operation #2:
+  - Truck        = 50.80354318352215 : [6, 2]
+  - Drone        = 49.61983815263466 : [6, 4, 2]
+  - Length       = 50.80354318352215
+Operation #3:
+  - Truck        = 47.84787521926282 : [2, 10, 3, 7, 11]
+  - Drone        = 49.655981839947074 : [2, 9, 11]
+  - Length       = 49.655981839947074
+Total Cost = 192.155989041875
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-54-n10-maxradius-20.txt
+flying_range = 11.443588663912445
+TSP-ep-all   = 308.9880889195066
+sasan        = 311.0870332063978
+xufei single = 308.9880889195066
+TSP-ep-all time = 0.03510806
+sasan run time  = 0.387624342
+xufei run time  = 0.168425539
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 308.9880889195066 : [1, 7, 5, 4, 6, 9, 10, 3, 2, 11]
+  - Drone        = 10.830907811222158 : [1, 8, 11]
+  - Length       = 308.9880889195066
+Total Cost = 308.9880889195066
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-54-n10-maxradius-40.txt
+flying_range = 22.88717732782489
+TSP-ep-all   = 306.3387229139585
+sasan        = 306.3387229139589
+xufei single = 306.33872291395846
+TSP-ep-all time = 0.032002239
+sasan run time  = 0.402994839
+xufei run time  = 0.417775022
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 10.830907811222158 : [1, 8]
+  - Drone        = 0.0 : [1, 8]
+  - Length       = 10.830907811222158
+Operation #2:
+  - Truck        = 295.50781510273634 : [8, 5, 4, 6, 9, 10, 3, 2, 11]
+  - Drone        = 21.215982232357533 : [8, 7, 11]
+  - Length       = 295.50781510273634
+Total Cost = 306.3387229139585
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-54-n10-maxradius-60.txt
+flying_range = 34.33076599173733
+TSP-ep-all   = 277.2133725437598
+sasan        = 277.2133725159383
+xufei single = 277.2133725149239
+TSP-ep-all time = 0.040514773
+sasan run time  = 3.403905634
+xufei run time  = 0.875514257
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 81.74175863675312 : [1, 2]
+  - Drone        = 0.0 : [1, 2]
+  - Length       = 81.74175863675312
+Operation #2:
+  - Truck        = 33.95585369269929 : [2, 3]
+  - Drone        = 0.0 : [2, 3]
+  - Length       = 33.95585369269929
+Operation #3:
+  - Truck        = 12.041594578792296 : [3, 10]
+  - Drone        = 33.67574533793021 : [3, 9, 10]
+  - Length       = 33.67574533793021
+Operation #4:
+  - Truck        = 46.04345773288535 : [10, 4]
+  - Drone        = 0.0 : [10, 4]
+  - Length       = 46.04345773288535
+Operation #5:
+  - Truck        = 17.46424919657298 : [4, 5]
+  - Drone        = 30.3577683237758 : [4, 6, 5]
+  - Length       = 30.3577683237758
+Operation #6:
+  - Truck        = 51.438788819716066 : [5, 8, 11]
+  - Drone        = 27.04407741263208 : [5, 7, 11]
+  - Length       = 51.438788819716066
+Total Cost = 277.2133725437598
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-54-n10-maxradius-100.txt
+flying_range = 57.217943319562224
+TSP-ep-all   = 224.87076968148014
+sasan        = 224.87076968148017
+xufei single = 224.87076968148014
+TSP-ep-all time = 0.048404676
+sasan run time  = 3.90400647
+xufei run time  = 1.434893169
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 68.42862957402534 : [1, 5, 4]
+  - Drone        = 54.46166495855001 : [1, 6, 4]
+  - Length       = 68.42862957402534
+Operation #2:
+  - Truck        = 46.04345773288535 : [4, 10]
+  - Drone        = 38.24653144142709 : [4, 9, 10]
+  - Length       = 46.04345773288535
+Operation #3:
+  - Truck        = 85.43096710642739 : [10, 3, 7]
+  - Drone        = 53.70676464171158 : [10, 2, 7]
+  - Length       = 85.43096710642739
+Operation #4:
+  - Truck        = 24.96771526814209 : [7, 11]
+  - Drone        = 14.147578503897568 : [7, 8, 11]
+  - Length       = 24.96771526814209
+Total Cost = 224.87076968148014
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-54-n10-maxradius-150.txt
+flying_range = 85.82691497934334
+TSP-ep-all   = 224.87076968148014
+sasan        = 224.87076968148014
+xufei single = 224.87076968148014
+TSP-ep-all time = 0.108427297
+sasan run time  = 2.437902479
+xufei run time  = 1.988062074
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 68.42862957402534 : [1, 5, 4]
+  - Drone        = 54.46166495855001 : [1, 6, 4]
+  - Length       = 68.42862957402534
+Operation #2:
+  - Truck        = 46.04345773288535 : [4, 10]
+  - Drone        = 38.24653144142709 : [4, 9, 10]
+  - Length       = 46.04345773288535
+Operation #3:
+  - Truck        = 85.43096710642739 : [10, 3, 7]
+  - Drone        = 53.70676464171158 : [10, 2, 7]
+  - Length       = 85.43096710642739
+Operation #4:
+  - Truck        = 24.96771526814209 : [7, 11]
+  - Drone        = 14.147578503897568 : [7, 8, 11]
+  - Length       = 24.96771526814209
+Total Cost = 224.87076968148014
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-54-n10-maxradius-200.txt
+flying_range = 1.0e6
+TSP-ep-all   = 224.87076968148014
+sasan        = 224.87076968148017
+xufei single = 224.87076968148017
+TSP-ep-all time = 0.05106479
+sasan run time  = 2.896415799
+xufei run time  = 1.344516321
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 68.42862957402534 : [1, 5, 4]
+  - Drone        = 54.46166495855001 : [1, 6, 4]
+  - Length       = 68.42862957402534
+Operation #2:
+  - Truck        = 46.04345773288535 : [4, 10]
+  - Drone        = 38.24653144142709 : [4, 9, 10]
+  - Length       = 46.04345773288535
+Operation #3:
+  - Truck        = 85.43096710642739 : [10, 3, 7]
+  - Drone        = 53.70676464171158 : [10, 2, 7]
+  - Length       = 85.43096710642739
+Operation #4:
+  - Truck        = 24.96771526814209 : [7, 11]
+  - Drone        = 14.147578503897568 : [7, 8, 11]
+  - Length       = 24.96771526814209
+Total Cost = 224.87076968148014
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-55-n10-maxradius-20.txt
+flying_range = 12.403263616190593
+TSP-ep-all   = 338.06069102860243
+sasan        = 338.0606910286021
+xufei single = 338.0606910286018
+TSP-ep-all time = 0.030940676
+sasan run time  = 0.151532326
+xufei run time  = 0.032706232
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 38.56413187096165 : [1, 10]
+  - Drone        = 0.0 : [1, 10]
+  - Length       = 38.56413187096165
+Operation #2:
+  - Truck        = 27.202941017470888 : [10, 9]
+  - Drone        = 0.0 : [10, 9]
+  - Length       = 27.202941017470888
+Operation #3:
+  - Truck        = 33.015148038438355 : [9, 3]
+  - Drone        = 0.0 : [9, 3]
+  - Length       = 33.015148038438355
+Operation #4:
+  - Truck        = 50.635955604688654 : [3, 7]
+  - Drone        = 0.0 : [3, 7]
+  - Length       = 50.635955604688654
+Operation #5:
+  - Truck        = 17.204650534085253 : [7, 2]
+  - Drone        = 0.0 : [7, 2]
+  - Length       = 17.204650534085253
+Operation #6:
+  - Truck        = 21.02379604162864 : [2, 5]
+  - Drone        = 0.0 : [2, 5]
+  - Length       = 21.02379604162864
+Operation #7:
+  - Truck        = 36.345563690772494 : [5, 6]
+  - Drone        = 0.0 : [5, 6]
+  - Length       = 36.345563690772494
+Operation #8:
+  - Truck        = 59.20304046246274 : [6, 8]
+  - Drone        = 0.0 : [6, 8]
+  - Length       = 59.20304046246274
+Operation #9:
+  - Truck        = 14.422205101855956 : [8, 4]
+  - Drone        = 0.0 : [8, 4]
+  - Length       = 14.422205101855956
+Operation #10:
+  - Truck        = 40.4432586662378 : [4, 11]
+  - Drone        = 0.0 : [4, 11]
+  - Length       = 40.4432586662378
+Total Cost = 338.06069102860243
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-55-n10-maxradius-40.txt
+flying_range = 24.806527232381185
+TSP-ep-all   = 332.8473924913269
+sasan        = 332.84739249132616
+xufei single = 332.84739249132673
+TSP-ep-all time = 0.042756886
+sasan run time  = 0.294985141
+xufei run time  = 0.079754956
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 38.56413187096165 : [1, 10]
+  - Drone        = 0.0 : [1, 10]
+  - Length       = 38.56413187096165
+Operation #2:
+  - Truck        = 27.202941017470888 : [10, 9]
+  - Drone        = 0.0 : [10, 9]
+  - Length       = 27.202941017470888
+Operation #3:
+  - Truck        = 33.015148038438355 : [9, 3]
+  - Drone        = 0.0 : [9, 3]
+  - Length       = 33.015148038438355
+Operation #4:
+  - Truck        = 50.635955604688654 : [3, 7]
+  - Drone        = 0.0 : [3, 7]
+  - Length       = 50.635955604688654
+Operation #5:
+  - Truck        = 33.015148038438355 : [7, 5]
+  - Drone        = 19.114223287856944 : [7, 2, 5]
+  - Length       = 33.015148038438355
+Operation #6:
+  - Truck        = 36.345563690772494 : [5, 6]
+  - Drone        = 0.0 : [5, 6]
+  - Length       = 36.345563690772494
+Operation #7:
+  - Truck        = 59.20304046246274 : [6, 8]
+  - Drone        = 0.0 : [6, 8]
+  - Length       = 59.20304046246274
+Operation #8:
+  - Truck        = 14.422205101855956 : [8, 4]
+  - Drone        = 0.0 : [8, 4]
+  - Length       = 14.422205101855956
+Operation #9:
+  - Truck        = 40.4432586662378 : [4, 11]
+  - Drone        = 0.0 : [4, 11]
+  - Length       = 40.4432586662378
+Total Cost = 332.8473924913269
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-55-n10-maxradius-60.txt
+flying_range = 37.20979084857178
+TSP-ep-all   = 306.41352906284516
+sasan        = 306.41352906284516
+xufei single = 306.41352906284516
+TSP-ep-all time = 0.027172577
+sasan run time  = 0.956499418
+xufei run time  = 0.421101764
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 61.46870288285144 : [1, 9]
+  - Drone        = 32.88353644421627 : [1, 10, 9]
+  - Length       = 61.46870288285144
+Operation #2:
+  - Truck        = 99.498228592817 : [9, 3, 2]
+  - Drone        = 36.10687034599276 : [9, 7, 2]
+  - Length       = 99.498228592817
+Operation #3:
+  - Truck        = 36.124783736376884 : [2, 6]
+  - Drone        = 28.684679866200568 : [2, 5, 6]
+  - Length       = 36.124783736376884
+Operation #4:
+  - Truck        = 59.20304046246274 : [6, 8]
+  - Drone        = 0.0 : [6, 8]
+  - Length       = 59.20304046246274
+Operation #5:
+  - Truck        = 50.1187733883371 : [8, 11]
+  - Drone        = 27.43273188404688 : [8, 4, 11]
+  - Length       = 50.1187733883371
+Total Cost = 306.41352906284516
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-55-n10-maxradius-100.txt
+flying_range = 62.01631808095296
+TSP-ep-all   = 253.12783800515888
+sasan        = 253.12783797974512
+xufei single = 253.12783800515857
+TSP-ep-all time = 0.047714809
+sasan run time  = 7.537759539
+xufei run time  = 0.891596112
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 38.56413187096165 : [1, 10]
+  - Drone        = 41.03028137980371 : [1, 4, 10]
+  - Length       = 41.03028137980371
+Operation #2:
+  - Truck        = 68.60029154456998 : [10, 2]
+  - Drone        = 58.17785023525686 : [10, 6, 2]
+  - Length       = 68.60029154456998
+Operation #3:
+  - Truck        = 17.204650534085253 : [2, 7]
+  - Drone        = 27.0194720400335 : [2, 5, 7]
+  - Length       = 27.0194720400335
+Operation #4:
+  - Truck        = 55.00909015790027 : [7, 9]
+  - Drone        = 41.82555182156351 : [7, 3, 9]
+  - Length       = 55.00909015790027
+Operation #5:
+  - Truck        = 61.46870288285144 : [9, 11]
+  - Drone        = 56.30038539779517 : [9, 8, 11]
+  - Length       = 61.46870288285144
+Total Cost = 253.12783800515888
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-55-n10-maxradius-150.txt
+flying_range = 93.02447712142944
+TSP-ep-all   = 253.12783800515888
+sasan        = 253.12783797974407
+xufei single = 253.12783800515098
+TSP-ep-all time = 0.204428779
+sasan run time  = 6.898891537
+xufei run time  = 1.055892944
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 38.56413187096165 : [1, 10]
+  - Drone        = 41.03028137980371 : [1, 4, 10]
+  - Length       = 41.03028137980371
+Operation #2:
+  - Truck        = 68.60029154456998 : [10, 2]
+  - Drone        = 58.17785023525686 : [10, 6, 2]
+  - Length       = 68.60029154456998
+Operation #3:
+  - Truck        = 17.204650534085253 : [2, 7]
+  - Drone        = 27.0194720400335 : [2, 5, 7]
+  - Length       = 27.0194720400335
+Operation #4:
+  - Truck        = 55.00909015790027 : [7, 9]
+  - Drone        = 41.82555182156351 : [7, 3, 9]
+  - Length       = 55.00909015790027
+Operation #5:
+  - Truck        = 61.46870288285144 : [9, 11]
+  - Drone        = 56.30038539779517 : [9, 8, 11]
+  - Length       = 61.46870288285144
+Total Cost = 253.12783800515888
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-55-n10-maxradius-200.txt
+flying_range = 1.0e6
+TSP-ep-all   = 253.12783800515888
+sasan        = 253.12783797974407
+xufei single = 253.12783797973765
+TSP-ep-all time = 0.048477285
+sasan run time  = 4.019216267
+xufei run time  = 2.005523427
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 38.56413187096165 : [1, 10]
+  - Drone        = 41.03028137980371 : [1, 4, 10]
+  - Length       = 41.03028137980371
+Operation #2:
+  - Truck        = 68.60029154456998 : [10, 2]
+  - Drone        = 58.17785023525686 : [10, 6, 2]
+  - Length       = 68.60029154456998
+Operation #3:
+  - Truck        = 17.204650534085253 : [2, 7]
+  - Drone        = 27.0194720400335 : [2, 5, 7]
+  - Length       = 27.0194720400335
+Operation #4:
+  - Truck        = 55.00909015790027 : [7, 9]
+  - Drone        = 41.82555182156351 : [7, 3, 9]
+  - Length       = 55.00909015790027
+Operation #5:
+  - Truck        = 61.46870288285144 : [9, 11]
+  - Drone        = 56.30038539779517 : [9, 8, 11]
+  - Length       = 61.46870288285144
+Total Cost = 253.12783800515888
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-56-n10-maxradius-20.txt
+flying_range = 10.456698755944918
+TSP-ep-all   = 322.6408561681279
+sasan        = 322.64085616812736
+xufei single = 322.64085616812787
+TSP-ep-all time = 0.027593001
+sasan run time  = 0.323790099
+xufei run time  = 0.171336068
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 64.50613066439345 : [1, 7]
+  - Drone        = 0.0 : [1, 7]
+  - Length       = 64.50613066439345
+Operation #2:
+  - Truck        = 34.48187929913333 : [7, 5]
+  - Drone        = 0.0 : [7, 5]
+  - Length       = 34.48187929913333
+Operation #3:
+  - Truck        = 31.78049716414141 : [5, 9]
+  - Drone        = 0.0 : [5, 9]
+  - Length       = 31.78049716414141
+Operation #4:
+  - Truck        = 24.20743687382041 : [9, 4]
+  - Drone        = 0.0 : [9, 4]
+  - Length       = 24.20743687382041
+Operation #5:
+  - Truck        = 30.479501308256342 : [4, 3]
+  - Drone        = 0.0 : [4, 3]
+  - Length       = 30.479501308256342
+Operation #6:
+  - Truck        = 20.615528128088304 : [3, 2]
+  - Drone        = 0.0 : [3, 2]
+  - Length       = 20.615528128088304
+Operation #7:
+  - Truck        = 18.35755975068582 : [2, 10]
+  - Drone        = 0.0 : [2, 10]
+  - Length       = 18.35755975068582
+Operation #8:
+  - Truck        = 52.32590180780452 : [10, 8]
+  - Drone        = 0.0 : [10, 8]
+  - Length       = 52.32590180780452
+Operation #9:
+  - Truck        = 23.08679276123039 : [8, 6]
+  - Drone        = 0.0 : [8, 6]
+  - Length       = 23.08679276123039
+Operation #10:
+  - Truck        = 22.79962841057394 : [6, 11]
+  - Drone        = 0.0 : [6, 11]
+  - Length       = 22.79962841057394
+Total Cost = 322.6408561681279
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-56-n10-maxradius-40.txt
+flying_range = 20.913397511889837
+TSP-ep-all   = 322.2941841210097
+sasan        = 322.2941841210097
+xufei single = 322.2941841210097
+TSP-ep-all time = 0.032592215
+sasan run time  = 0.265482443
+xufei run time  = 0.226014787
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 22.79962841057394 : [1, 6]
+  - Drone        = 0.0 : [1, 6]
+  - Length       = 22.79962841057394
+Operation #2:
+  - Truck        = 23.08679276123039 : [6, 8]
+  - Drone        = 0.0 : [6, 8]
+  - Length       = 23.08679276123039
+Operation #3:
+  - Truck        = 52.32590180780452 : [8, 10]
+  - Drone        = 0.0 : [8, 10]
+  - Length       = 52.32590180780452
+Operation #4:
+  - Truck        = 38.62641583165593 : [10, 3]
+  - Drone        = 19.48654393938706 : [10, 2, 3]
+  - Length       = 38.62641583165593
+Operation #5:
+  - Truck        = 30.479501308256342 : [3, 4]
+  - Drone        = 0.0 : [3, 4]
+  - Length       = 30.479501308256342
+Operation #6:
+  - Truck        = 24.20743687382041 : [4, 9]
+  - Drone        = 0.0 : [4, 9]
+  - Length       = 24.20743687382041
+Operation #7:
+  - Truck        = 31.78049716414141 : [9, 5]
+  - Drone        = 0.0 : [9, 5]
+  - Length       = 31.78049716414141
+Operation #8:
+  - Truck        = 34.48187929913333 : [5, 7]
+  - Drone        = 0.0 : [5, 7]
+  - Length       = 34.48187929913333
+Operation #9:
+  - Truck        = 64.50613066439345 : [7, 11]
+  - Drone        = 0.0 : [7, 11]
+  - Length       = 64.50613066439345
+Total Cost = 322.2941841210097
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-56-n10-maxradius-60.txt
+flying_range = 31.37009626783475
+TSP-ep-all   = 294.9777284986692
+sasan        = 294.95778972499147
+xufei single = 294.9777284986685
+TSP-ep-all time = 0.030394032
+sasan run time  = 1.495367209
+xufei run time  = 1.124707532
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 64.50613066439345 : [1, 7]
+  - Drone        = 0.0 : [1, 7]
+  - Length       = 64.50613066439345
+Operation #2:
+  - Truck        = 34.48187929913333 : [7, 5]
+  - Drone        = 0.0 : [7, 5]
+  - Length       = 34.48187929913333
+Operation #3:
+  - Truck        = 31.78049716414141 : [5, 9]
+  - Drone        = 0.0 : [5, 9]
+  - Length       = 31.78049716414141
+Operation #4:
+  - Truck        = 35.22782990761707 : [9, 3]
+  - Drone        = 27.343469091038376 : [9, 4, 3]
+  - Length       = 35.22782990761707
+Operation #5:
+  - Truck        = 20.615528128088304 : [3, 2]
+  - Drone        = 28.491987791170878 : [3, 10, 2]
+  - Length       = 28.491987791170878
+Operation #6:
+  - Truck        = 56.43580423808985 : [2, 8]
+  - Drone        = 0.0 : [2, 8]
+  - Length       = 56.43580423808985
+Operation #7:
+  - Truck        = 44.05359943412317 : [8, 11]
+  - Drone        = 22.943210585902165 : [8, 6, 11]
+  - Length       = 44.05359943412317
+Total Cost = 294.9777284986692
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-56-n10-maxradius-100.txt
+flying_range = 52.28349377972459
+TSP-ep-all   = 237.24868676639954
+sasan        = 237.24868671864556
+xufei single = 237.24868676639016
+TSP-ep-all time = 0.030739415
+sasan run time  = 3.111228301
+xufei run time  = 1.493337306
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 64.03321592150469 : [1, 5]
+  - Drone        = 49.494004981763396 : [1, 7, 5]
+  - Length       = 64.03321592150469
+Operation #2:
+  - Truck        = 31.78049716414141 : [5, 9]
+  - Drone        = 34.307321748084725 : [5, 4, 9]
+  - Length       = 34.307321748084725
+Operation #3:
+  - Truck        = 38.41874542459709 : [9, 2]
+  - Drone        = 27.92167901785269 : [9, 3, 2]
+  - Length       = 38.41874542459709
+Operation #4:
+  - Truck        = 56.43580423808985 : [2, 8]
+  - Drone        = 35.34173077924517 : [2, 10, 8]
+  - Length       = 56.43580423808985
+Operation #5:
+  - Truck        = 44.05359943412317 : [8, 11]
+  - Drone        = 22.943210585902165 : [8, 6, 11]
+  - Length       = 44.05359943412317
+Total Cost = 237.24868676639954
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-56-n10-maxradius-150.txt
+flying_range = 78.42524066958688
+TSP-ep-all   = 229.8403303670708
+sasan        = 228.61435361514486
+xufei single = 228.61435361513986
+TSP-ep-all time = 0.156457566
+sasan run time  = 16.556027853
+xufei run time  = 2.041734802
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 75.1180485681413 : [1, 8, 9]
+  - Drone        = 64.40059694857982 : [1, 10, 9]
+  - Length       = 75.1180485681413
+Operation #2:
+  - Truck        = 24.20743687382041 : [9, 4]
+  - Drone        = 41.979967785769944 : [9, 2, 4]
+  - Length       = 41.979967785769944
+Operation #3:
+  - Truck        = 44.40720662234904 : [4, 5]
+  - Drone        = 48.34941691641478 : [4, 3, 5]
+  - Length       = 48.34941691641478
+Operation #4:
+  - Truck        = 64.39289709674479 : [5, 6, 11]
+  - Drone        = 49.494004981763396 : [5, 7, 11]
+  - Length       = 64.39289709674479
+Total Cost = 229.8403303670708
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-56-n10-maxradius-200.txt
+flying_range = 1.0e6
+TSP-ep-all   = 229.8403303670708
+sasan        = 226.87615664088588
+xufei single = 226.87615661809832
+TSP-ep-all time = 0.064863804
+sasan run time  = 4.116906965
+xufei run time  = 3.637142154
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 75.1180485681413 : [1, 8, 9]
+  - Drone        = 64.40059694857982 : [1, 10, 9]
+  - Length       = 75.1180485681413
+Operation #2:
+  - Truck        = 24.20743687382041 : [9, 4]
+  - Drone        = 41.979967785769944 : [9, 2, 4]
+  - Length       = 41.979967785769944
+Operation #3:
+  - Truck        = 44.40720662234904 : [4, 5]
+  - Drone        = 48.34941691641478 : [4, 3, 5]
+  - Length       = 48.34941691641478
+Operation #4:
+  - Truck        = 64.39289709674479 : [5, 6, 11]
+  - Drone        = 49.494004981763396 : [5, 7, 11]
+  - Length       = 64.39289709674479
+Total Cost = 229.8403303670708
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-57-n10-maxradius-20.txt
+flying_range = 10.130638308617376
+TSP-ep-all   = 252.93102644534773
+sasan        = 252.93102644534778
+xufei single = 252.93102644534775
+TSP-ep-all time = 0.030372798
+sasan run time  = 0.334728501
+xufei run time  = 0.272623903
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 18.48135748325773 : [1, 4]
+  - Drone        = 0.0 : [1, 4]
+  - Length       = 18.48135748325773
+Operation #2:
+  - Truck        = 7.211102550927978 : [4, 2]
+  - Drone        = 6.530886298390023 : [4, 8, 2]
+  - Length       = 7.211102550927978
+Operation #3:
+  - Truck        = 55.57877292636101 : [2, 5]
+  - Drone        = 0.0 : [2, 5]
+  - Length       = 55.57877292636101
+Operation #4:
+  - Truck        = 5.830951894845301 : [5, 6]
+  - Drone        = 0.0 : [5, 6]
+  - Length       = 5.830951894845301
+Operation #5:
+  - Truck        = 29.068883707497267 : [6, 7]
+  - Drone        = 0.0 : [6, 7]
+  - Length       = 29.068883707497267
+Operation #6:
+  - Truck        = 28.635642126552707 : [7, 9]
+  - Drone        = 0.0 : [7, 9]
+  - Length       = 28.635642126552707
+Operation #7:
+  - Truck        = 9.848857801796104 : [9, 10]
+  - Drone        = 0.0 : [9, 10]
+  - Length       = 9.848857801796104
+Operation #8:
+  - Truck        = 81.41252974819048 : [10, 3]
+  - Drone        = 0.0 : [10, 3]
+  - Length       = 81.41252974819048
+Operation #9:
+  - Truck        = 16.862928205919168 : [3, 11]
+  - Drone        = 0.0 : [3, 11]
+  - Length       = 16.862928205919168
+Total Cost = 252.93102644534773
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-57-n10-maxradius-40.txt
+flying_range = 20.261276617234753
+TSP-ep-all   = 225.3163448527311
+sasan        = 225.3163448527311
+xufei single = 225.3163448527311
+TSP-ep-all time = 0.039835125
+sasan run time  = 2.22608053
+xufei run time  = 0.395638602
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 77.92037392529377 : [1, 5]
+  - Drone        = 0.0 : [1, 5]
+  - Length       = 77.92037392529377
+Operation #2:
+  - Truck        = 32.7566787083184 : [5, 7]
+  - Drone        = 17.449917801171285 : [5, 6, 7]
+  - Length       = 32.7566787083184
+Operation #3:
+  - Truck        = 21.470910553583888 : [7, 10]
+  - Drone        = 19.242249964174405 : [7, 9, 10]
+  - Length       = 21.470910553583888
+Operation #4:
+  - Truck        = 67.47592163134935 : [10, 2]
+  - Drone        = 0.0 : [10, 2]
+  - Length       = 67.47592163134935
+Operation #5:
+  - Truck        = 7.211102550927978 : [2, 4]
+  - Drone        = 6.530886298390023 : [2, 8, 4]
+  - Length       = 7.211102550927978
+Operation #6:
+  - Truck        = 18.48135748325773 : [4, 11]
+  - Drone        = 16.753122591506205 : [4, 3, 11]
+  - Length       = 18.48135748325773
+Total Cost = 225.3163448527311
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-57-n10-maxradius-60.txt
+flying_range = 30.391914925852124
+TSP-ep-all   = 225.3163448527311
+sasan        = 225.3163448527311
+xufei single = 225.3163448527311
+TSP-ep-all time = 0.03759355
+sasan run time  = 5.85733606
+xufei run time  = 1.680242193
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 77.92037392529377 : [1, 5]
+  - Drone        = 0.0 : [1, 5]
+  - Length       = 77.92037392529377
+Operation #2:
+  - Truck        = 32.7566787083184 : [5, 7]
+  - Drone        = 17.449917801171285 : [5, 6, 7]
+  - Length       = 32.7566787083184
+Operation #3:
+  - Truck        = 21.470910553583888 : [7, 10]
+  - Drone        = 19.242249964174405 : [7, 9, 10]
+  - Length       = 21.470910553583888
+Operation #4:
+  - Truck        = 67.47592163134935 : [10, 2]
+  - Drone        = 0.0 : [10, 2]
+  - Length       = 67.47592163134935
+Operation #5:
+  - Truck        = 7.211102550927978 : [2, 4]
+  - Drone        = 6.530886298390023 : [2, 8, 4]
+  - Length       = 7.211102550927978
+Operation #6:
+  - Truck        = 18.48135748325773 : [4, 11]
+  - Drone        = 16.753122591506205 : [4, 3, 11]
+  - Length       = 18.48135748325773
+Total Cost = 225.3163448527311
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-57-n10-maxradius-100.txt
+flying_range = 50.653191543086876
+TSP-ep-all   = 214.41790195448945
+sasan        = 214.41790195448812
+xufei single = 214.4179019328854
+TSP-ep-all time = 0.111681701
+sasan run time  = 17.959577532
+xufei run time  = 1.28552474
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 77.92037392529377 : [1, 5]
+  - Drone        = 46.490628570929715 : [1, 3, 5]
+  - Length       = 77.92037392529377
+Operation #2:
+  - Truck        = 34.89983560234257 : [5, 6, 7]
+  - Drone        = 44.32198744063135 : [5, 9, 7]
+  - Length       = 44.32198744063135
+Operation #3:
+  - Truck        = 66.48308055437865 : [7, 2]
+  - Drone        = 44.47341609246662 : [7, 10, 2]
+  - Length       = 66.48308055437865
+Operation #4:
+  - Truck        = 25.69246003418571 : [2, 4, 11]
+  - Drone        = 15.563129380616578 : [2, 8, 11]
+  - Length       = 25.69246003418571
+Total Cost = 214.41790195448945
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-57-n10-maxradius-150.txt
+flying_range = 75.97978731463031
+TSP-ep-all   = 197.6577990191935
+sasan        = 197.65779901919086
+xufei single = 197.65779899932005
+TSP-ep-all time = 0.058397152
+sasan run time  = 13.414486948
+xufei run time  = 1.948613442
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 18.48135748325773 : [1, 4]
+  - Drone        = 16.753122591506205 : [1, 3, 4]
+  - Length       = 18.48135748325773
+Operation #2:
+  - Truck        = 69.91328279751315 : [4, 2, 8, 6]
+  - Drone        = 70.34328640273415 : [4, 9, 6]
+  - Length       = 70.34328640273415
+Operation #3:
+  - Truck        = 5.830951894845301 : [6, 5]
+  - Drone        = 30.912781207907834 : [6, 7, 5]
+  - Length       = 30.912781207907834
+Operation #4:
+  - Truck        = 77.92037392529377 : [5, 11]
+  - Drone        = 71.86924925266537 : [5, 10, 11]
+  - Length       = 77.92037392529377
+Total Cost = 197.6577990191935
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-57-n10-maxradius-200.txt
+flying_range = 1.0e6
+TSP-ep-all   = 197.6577990191935
+sasan        = 197.4705720366419
+xufei single = 197.4705720564889
+TSP-ep-all time = 0.062057518
+sasan run time  = 6.776134267
+xufei run time  = 2.624577602
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 18.48135748325773 : [1, 4]
+  - Drone        = 16.753122591506205 : [1, 3, 4]
+  - Length       = 18.48135748325773
+Operation #2:
+  - Truck        = 69.91328279751315 : [4, 2, 8, 6]
+  - Drone        = 70.34328640273415 : [4, 9, 6]
+  - Length       = 70.34328640273415
+Operation #3:
+  - Truck        = 5.830951894845301 : [6, 5]
+  - Drone        = 30.912781207907834 : [6, 7, 5]
+  - Length       = 30.912781207907834
+Operation #4:
+  - Truck        = 77.92037392529377 : [5, 11]
+  - Drone        = 71.86924925266537 : [5, 10, 11]
+  - Length       = 77.92037392529377
+Total Cost = 197.6577990191935
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-58-n10-maxradius-20.txt
+flying_range = 9.929014672872107
+TSP-ep-all   = 302.8738141722596
+sasan        = 302.8738141722596
+xufei single = 302.87381417225953
+TSP-ep-all time = 0.079033526
+sasan run time  = 0.153818002
+xufei run time  = 0.160532479
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 44.11044395967804 : [1, 8]
+  - Drone        = 0.0 : [1, 8]
+  - Length       = 44.11044395967804
+Operation #2:
+  - Truck        = 40.162171256046406 : [8, 3]
+  - Drone        = 0.0 : [8, 3]
+  - Length       = 40.162171256046406
+Operation #3:
+  - Truck        = 6.082762530298219 : [3, 2]
+  - Drone        = 0.0 : [3, 2]
+  - Length       = 6.082762530298219
+Operation #4:
+  - Truck        = 19.1049731745428 : [2, 7]
+  - Drone        = 0.0 : [2, 7]
+  - Length       = 19.1049731745428
+Operation #5:
+  - Truck        = 33.95585369269929 : [7, 9]
+  - Drone        = 0.0 : [7, 9]
+  - Length       = 33.95585369269929
+Operation #6:
+  - Truck        = 55.94640292279746 : [9, 10]
+  - Drone        = 0.0 : [9, 10]
+  - Length       = 55.94640292279746
+Operation #7:
+  - Truck        = 7.810249675906654 : [10, 4]
+  - Drone        = 0.0 : [10, 4]
+  - Length       = 7.810249675906654
+Operation #8:
+  - Truck        = 42.95346318982906 : [4, 5]
+  - Drone        = 0.0 : [4, 5]
+  - Length       = 42.95346318982906
+Operation #9:
+  - Truck        = 32.55764119219941 : [5, 6]
+  - Drone        = 0.0 : [5, 6]
+  - Length       = 32.55764119219941
+Operation #10:
+  - Truck        = 20.189852578262258 : [6, 11]
+  - Drone        = 0.0 : [6, 11]
+  - Length       = 20.189852578262258
+Total Cost = 302.8738141722596
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-58-n10-maxradius-40.txt
+flying_range = 19.858029345744214
+TSP-ep-all   = 301.893515341239
+sasan        = 301.893515341239
+xufei single = 301.89351534124035
+TSP-ep-all time = 0.030998199
+sasan run time  = 0.38218925
+xufei run time  = 0.231222329
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 44.11044395967804 : [1, 8]
+  - Drone        = 0.0 : [1, 8]
+  - Length       = 44.11044395967804
+Operation #2:
+  - Truck        = 40.162171256046406 : [8, 3]
+  - Drone        = 0.0 : [8, 3]
+  - Length       = 40.162171256046406
+Operation #3:
+  - Truck        = 58.163290566519706 : [3, 7, 9]
+  - Drone        = 17.907450012467617 : [3, 2, 9]
+  - Length       = 58.163290566519706
+Operation #4:
+  - Truck        = 55.94640292279746 : [9, 10]
+  - Drone        = 0.0 : [9, 10]
+  - Length       = 55.94640292279746
+Operation #5:
+  - Truck        = 7.810249675906654 : [10, 4]
+  - Drone        = 0.0 : [10, 4]
+  - Length       = 7.810249675906654
+Operation #6:
+  - Truck        = 42.95346318982906 : [4, 5]
+  - Drone        = 0.0 : [4, 5]
+  - Length       = 42.95346318982906
+Operation #7:
+  - Truck        = 32.55764119219941 : [5, 6]
+  - Drone        = 0.0 : [5, 6]
+  - Length       = 32.55764119219941
+Operation #8:
+  - Truck        = 20.189852578262258 : [6, 11]
+  - Drone        = 0.0 : [6, 11]
+  - Length       = 20.189852578262258
+Total Cost = 301.893515341239
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-58-n10-maxradius-60.txt
+flying_range = 29.78704401861632
+TSP-ep-all   = 258.8047015155923
+sasan        = 258.80470148961285
+xufei single = 258.8047015155724
+TSP-ep-all time = 0.030629872
+sasan run time  = 1.372476076
+xufei run time  = 0.639600454
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 44.11044395967804 : [1, 8]
+  - Drone        = 0.0 : [1, 8]
+  - Length       = 44.11044395967804
+Operation #2:
+  - Truck        = 40.162171256046406 : [8, 3]
+  - Drone        = 25.844889767131868 : [8, 2, 3]
+  - Length       = 40.162171256046406
+Operation #3:
+  - Truck        = 26.92582403567252 : [3, 9]
+  - Drone        = 29.081645283259853 : [3, 7, 9]
+  - Length       = 29.081645283259853
+Operation #4:
+  - Truck        = 55.94640292279746 : [9, 10]
+  - Drone        = 0.0 : [9, 10]
+  - Length       = 55.94640292279746
+Operation #5:
+  - Truck        = 39.92492955535426 : [10, 5]
+  - Drone        = 25.381856432867856 : [10, 4, 5]
+  - Length       = 39.92492955535426
+Operation #6:
+  - Truck        = 49.57910853845626 : [5, 11]
+  - Drone        = 26.373746885230837 : [5, 6, 11]
+  - Length       = 49.57910853845626
+Total Cost = 258.8047015155923
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-58-n10-maxradius-100.txt
+flying_range = 49.645073364360535
+TSP-ep-all   = 257.10796591206713
+sasan        = 252.93745437137113
+xufei single = 252.93745437137113
+TSP-ep-all time = 0.033532006
+sasan run time  = 2.503624679
+xufei run time  = 0.844456052
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 44.11044395967804 : [1, 8]
+  - Drone        = 0.0 : [1, 8]
+  - Length       = 44.11044395967804
+Operation #2:
+  - Truck        = 40.162171256046406 : [8, 3]
+  - Drone        = 40.621256900108605 : [8, 7, 3]
+  - Length       = 40.621256900108605
+Operation #3:
+  - Truck        = 82.87222695846998 : [3, 9, 10]
+  - Drone        = 45.40292042509938 : [3, 2, 10]
+  - Length       = 82.87222695846998
+Operation #4:
+  - Truck        = 39.92492955535426 : [10, 5]
+  - Drone        = 25.381856432867856 : [10, 4, 5]
+  - Length       = 39.92492955535426
+Operation #5:
+  - Truck        = 49.57910853845626 : [5, 11]
+  - Drone        = 26.373746885230837 : [5, 6, 11]
+  - Length       = 49.57910853845626
+Total Cost = 257.10796591206713
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-58-n10-maxradius-150.txt
+flying_range = 74.4676100465408
+TSP-ep-all   = 221.77467816796087
+sasan        = 221.77467816796252
+xufei single = 221.7746781679601
+TSP-ep-all time = 0.054481388
+sasan run time  = 7.623748115
+xufei run time  = 5.010202678
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 49.57910853845626 : [1, 5]
+  - Drone        = 26.373746885230837 : [1, 6, 5]
+  - Length       = 49.57910853845626
+Operation #2:
+  - Truck        = 69.90282207273363 : [5, 3, 2]
+  - Drone        = 67.53376146007191 : [5, 4, 2]
+  - Length       = 69.90282207273363
+Operation #3:
+  - Truck        = 29.732137494637012 : [2, 9]
+  - Drone        = 26.530413433621046 : [2, 7, 9]
+  - Length       = 29.732137494637012
+Operation #4:
+  - Truck        = 70.11044395967804 : [9, 8, 11]
+  - Drone        = 72.56061006213397 : [9, 10, 11]
+  - Length       = 72.56061006213397
+Total Cost = 221.77467816796087
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-58-n10-maxradius-200.txt
+flying_range = 1.0e6
+TSP-ep-all   = 213.33192247375453
+sasan        = 213.33192247375453
+xufei single = 213.3319224737545
+TSP-ep-all time = 0.044824022
+sasan run time  = 3.612670675
+xufei run time  = 2.45369723
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 90.35537774602267 : [1, 8, 3, 2]
+  - Drone        = 86.94894776068551 : [1, 10, 2]
+  - Length       = 90.35537774602267
+Operation #2:
+  - Truck        = 29.732137494637012 : [2, 9]
+  - Drone        = 26.530413433621046 : [2, 7, 9]
+  - Length       = 29.732137494637012
+Operation #3:
+  - Truck        = 93.24440723309485 : [9, 5, 6, 11]
+  - Drone        = 77.10831168188824 : [9, 4, 11]
+  - Length       = 93.24440723309485
+Total Cost = 213.33192247375453
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-59-n10-maxradius-20.txt
+flying_range = 12.857356939118654
+TSP-ep-all   = 343.8285825318142
+sasan        = 343.82858253181416
+xufei single = 343.82858253181416
+TSP-ep-all time = 0.023675996
+sasan run time  = 0.291918434
+xufei run time  = 0.176928233
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 37.9883071053642 : [1, 7]
+  - Drone        = 0.0 : [1, 7]
+  - Length       = 37.9883071053642
+Operation #2:
+  - Truck        = 8.06225774829855 : [7, 10]
+  - Drone        = 0.0 : [7, 10]
+  - Length       = 8.06225774829855
+Operation #3:
+  - Truck        = 20.0 : [10, 6]
+  - Drone        = 0.0 : [10, 6]
+  - Length       = 20.0
+Operation #4:
+  - Truck        = 40.718546143004666 : [6, 9]
+  - Drone        = 0.0 : [6, 9]
+  - Length       = 40.718546143004666
+Operation #5:
+  - Truck        = 13.152946437965905 : [9, 3]
+  - Drone        = 10.632168761236873 : [9, 2, 3]
+  - Length       = 13.152946437965905
+Operation #6:
+  - Truck        = 39.293765408777 : [3, 4]
+  - Drone        = 0.0 : [3, 4]
+  - Length       = 39.293765408777
+Operation #7:
+  - Truck        = 88.20430828479978 : [4, 8]
+  - Drone        = 0.0 : [4, 8]
+  - Length       = 88.20430828479978
+Operation #8:
+  - Truck        = 80.02499609497022 : [8, 5]
+  - Drone        = 0.0 : [8, 5]
+  - Length       = 80.02499609497022
+Operation #9:
+  - Truck        = 16.383455308633867 : [5, 11]
+  - Drone        = 0.0 : [5, 11]
+  - Length       = 16.383455308633867
+Total Cost = 343.8285825318142
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-59-n10-maxradius-40.txt
+flying_range = 25.71471387823731
+TSP-ep-all   = 334.33317358212315
+sasan        = 332.89180914881314
+xufei single = 332.89180914881314
+TSP-ep-all time = 0.030336651
+sasan run time  = 1.339062344
+xufei run time  = 0.704957741
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 36.55515590397171 : [1, 10]
+  - Drone        = 23.025282426831374 : [1, 7, 10]
+  - Length       = 36.55515590397171
+Operation #2:
+  - Truck        = 20.0 : [10, 6]
+  - Drone        = 0.0 : [10, 6]
+  - Length       = 20.0
+Operation #3:
+  - Truck        = 40.718546143004666 : [6, 9]
+  - Drone        = 0.0 : [6, 9]
+  - Length       = 40.718546143004666
+Operation #4:
+  - Truck        = 13.152946437965905 : [9, 3]
+  - Drone        = 10.632168761236873 : [9, 2, 3]
+  - Length       = 13.152946437965905
+Operation #5:
+  - Truck        = 39.293765408777 : [3, 4]
+  - Drone        = 0.0 : [3, 4]
+  - Length       = 39.293765408777
+Operation #6:
+  - Truck        = 88.20430828479978 : [4, 8]
+  - Drone        = 0.0 : [4, 8]
+  - Length       = 88.20430828479978
+Operation #7:
+  - Truck        = 80.02499609497022 : [8, 5]
+  - Drone        = 0.0 : [8, 5]
+  - Length       = 80.02499609497022
+Operation #8:
+  - Truck        = 16.383455308633867 : [5, 11]
+  - Drone        = 0.0 : [5, 11]
+  - Length       = 16.383455308633867
+Total Cost = 334.33317358212315
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-59-n10-maxradius-60.txt
+flying_range = 38.57207081735596
+TSP-ep-all   = 324.26306506762626
+sasan        = 323.1651160286579
+xufei single = 323.16511602865796
+TSP-ep-all time = 0.036370035
+sasan run time  = 1.399777553
+xufei run time  = 0.387852486
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 36.55515590397171 : [1, 10]
+  - Drone        = 23.025282426831374 : [1, 7, 10]
+  - Length       = 36.55515590397171
+Operation #2:
+  - Truck        = 57.8013840664737 : [10, 2]
+  - Drone        = 35.401771591761076 : [10, 6, 2]
+  - Length       = 57.8013840664737
+Operation #3:
+  - Truck        = 45.293765408777 : [2, 3, 4]
+  - Drone        = 28.9921781245307 : [2, 9, 4]
+  - Length       = 45.293765408777
+Operation #4:
+  - Truck        = 88.20430828479978 : [4, 8]
+  - Drone        = 0.0 : [4, 8]
+  - Length       = 88.20430828479978
+Operation #5:
+  - Truck        = 80.02499609497022 : [8, 5]
+  - Drone        = 0.0 : [8, 5]
+  - Length       = 80.02499609497022
+Operation #6:
+  - Truck        = 16.383455308633867 : [5, 11]
+  - Drone        = 0.0 : [5, 11]
+  - Length       = 16.383455308633867
+Total Cost = 324.26306506762626
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-59-n10-maxradius-100.txt
+flying_range = 64.28678469559327
+TSP-ep-all   = 284.5379614799936
+sasan        = 284.5379614799936
+xufei single = 284.53796147999367
+TSP-ep-all time = 0.05712285
+sasan run time  = 3.013378297
+xufei run time  = 0.745611553
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 96.40845140360409 : [1, 5, 8]
+  - Drone        = 56.99381957915327 : [1, 6, 8]
+  - Length       = 96.40845140360409
+Operation #2:
+  - Truck        = 90.54157609374933 : [8, 9, 3]
+  - Drone        = 63.749036846788385 : [8, 4, 3]
+  - Length       = 90.54157609374933
+Operation #3:
+  - Truck        = 61.032778078668514 : [3, 10]
+  - Drone        = 31.90069203323685 : [3, 2, 10]
+  - Length       = 61.032778078668514
+Operation #4:
+  - Truck        = 36.55515590397171 : [10, 11]
+  - Drone        = 23.025282426831374 : [10, 7, 11]
+  - Length       = 36.55515590397171
+Total Cost = 284.5379614799936
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-59-n10-maxradius-150.txt
+flying_range = 96.4301770433899
+TSP-ep-all   = 204.03303779418667
+sasan        = 204.03303779418667
+xufei single = 204.03303779418667
+TSP-ep-all time = 0.043318883
+sasan run time  = 14.612942479
+xufei run time  = 1.534643208
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 90.52355138577533 : [1, 5, 6, 9]
+  - Drone        = 86.17785831303877 : [1, 8, 9]
+  - Length       = 90.52355138577533
+Operation #2:
+  - Truck        = 76.95433050443961 : [9, 3, 2, 10]
+  - Drone        = 68.60670236925986 : [9, 4, 10]
+  - Length       = 76.95433050443961
+Operation #3:
+  - Truck        = 36.55515590397171 : [10, 11]
+  - Drone        = 23.025282426831374 : [10, 7, 11]
+  - Length       = 36.55515590397171
+Total Cost = 204.03303779418667
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-59-n10-maxradius-200.txt
+flying_range = 1.0e6
+TSP-ep-all   = 204.03303779418667
+sasan        = 204.03303779418667
+xufei single = 204.03303777368274
+TSP-ep-all time = 0.045840482
+sasan run time  = 4.496162264
+xufei run time  = 2.18763331
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 36.55515590397171 : [1, 10]
+  - Drone        = 23.025282426831374 : [1, 7, 10]
+  - Length       = 36.55515590397171
+Operation #2:
+  - Truck        = 76.95433050443961 : [10, 2, 3, 9]
+  - Drone        = 68.60670236925986 : [10, 4, 9]
+  - Length       = 76.95433050443961
+Operation #3:
+  - Truck        = 90.52355138577533 : [9, 6, 5, 11]
+  - Drone        = 86.17785831303877 : [9, 8, 11]
+  - Length       = 90.52355138577533
+Total Cost = 204.03303779418667
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-60-n10-maxradius-20.txt
+flying_range = 11.538656537981588
+TSP-ep-all   = 280.2359560373852
+sasan        = 280.23595600925
+xufei single = 280.2359560373852
+TSP-ep-all time = 0.03158051
+sasan run time  = 0.167695856
+xufei run time  = 0.045158769
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 40.6970613368708 : [1, 2]
+  - Drone        = 0.0 : [1, 2]
+  - Length       = 40.6970613368708
+Operation #2:
+  - Truck        = 19.235384061671343 : [2, 7]
+  - Drone        = 0.0 : [2, 7]
+  - Length       = 19.235384061671343
+Operation #3:
+  - Truck        = 21.470910553583888 : [7, 3]
+  - Drone        = 0.0 : [7, 3]
+  - Length       = 21.470910553583888
+Operation #4:
+  - Truck        = 43.9089968002003 : [3, 10]
+  - Drone        = 0.0 : [3, 10]
+  - Length       = 43.9089968002003
+Operation #5:
+  - Truck        = 8.94427190999916 : [10, 8]
+  - Drone        = 0.0 : [10, 8]
+  - Length       = 8.94427190999916
+Operation #6:
+  - Truck        = 33.60059523282288 : [8, 6]
+  - Drone        = 0.0 : [8, 6]
+  - Length       = 33.60059523282288
+Operation #7:
+  - Truck        = 13.45362404707371 : [6, 4]
+  - Drone        = 0.0 : [6, 4]
+  - Length       = 13.45362404707371
+Operation #8:
+  - Truck        = 17.72004514666935 : [4, 9]
+  - Drone        = 0.0 : [4, 9]
+  - Length       = 17.72004514666935
+Operation #9:
+  - Truck        = 43.86342439892262 : [9, 5]
+  - Drone        = 0.0 : [9, 5]
+  - Length       = 43.86342439892262
+Operation #10:
+  - Truck        = 37.34164254957117 : [5, 11]
+  - Drone        = 0.0 : [5, 11]
+  - Length       = 37.34164254957117
+Total Cost = 280.2359560373852
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-60-n10-maxradius-40.txt
+flying_range = 23.077313075963175
+TSP-ep-all   = 273.9883588476955
+sasan        = 273.9883588476091
+xufei single = 273.9883588201883
+TSP-ep-all time = 0.029338572
+sasan run time  = 0.762161046
+xufei run time  = 0.384178205
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 37.34164254957117 : [1, 5]
+  - Drone        = 0.0 : [1, 5]
+  - Length       = 37.34164254957117
+Operation #2:
+  - Truck        = 43.86342439892262 : [5, 9]
+  - Drone        = 0.0 : [5, 9]
+  - Length       = 43.86342439892262
+Operation #3:
+  - Truck        = 17.72004514666935 : [9, 4]
+  - Drone        = 21.73514304334049 : [9, 6, 4]
+  - Length       = 21.73514304334049
+Operation #4:
+  - Truck        = 38.600518131237564 : [4, 8]
+  - Drone        = 0.0 : [4, 8]
+  - Length       = 38.600518131237564
+Operation #5:
+  - Truck        = 8.94427190999916 : [8, 10]
+  - Drone        = 0.0 : [8, 10]
+  - Length       = 8.94427190999916
+Operation #6:
+  - Truck        = 43.9089968002003 : [10, 3]
+  - Drone        = 0.0 : [10, 3]
+  - Length       = 43.9089968002003
+Operation #7:
+  - Truck        = 38.897300677553446 : [3, 2]
+  - Drone        = 20.353147307627616 : [3, 7, 2]
+  - Length       = 38.897300677553446
+Operation #8:
+  - Truck        = 40.6970613368708 : [2, 11]
+  - Drone        = 0.0 : [2, 11]
+  - Length       = 40.6970613368708
+Total Cost = 273.9883588476955
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-60-n10-maxradius-60.txt
+flying_range = 34.615969613944756
+TSP-ep-all   = 257.82812252430665
+sasan        = 257.80579108876185
+xufei single = 257.8057910628486
+TSP-ep-all time = 0.026347463
+sasan run time  = 2.85831982
+xufei run time  = 1.234064456
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 37.34164254957117 : [1, 5]
+  - Drone        = 0.0 : [1, 5]
+  - Length       = 37.34164254957117
+Operation #2:
+  - Truck        = 61.465437442517235 : [5, 4]
+  - Drone        = 30.791734772795984 : [5, 9, 4]
+  - Length       = 61.465437442517235
+Operation #3:
+  - Truck        = 38.600518131237564 : [4, 8]
+  - Drone        = 23.527109639948296 : [4, 6, 8]
+  - Length       = 38.600518131237564
+Operation #4:
+  - Truck        = 44.27188724235731 : [8, 3]
+  - Drone        = 26.42663435509973 : [8, 10, 3]
+  - Length       = 44.27188724235731
+Operation #5:
+  - Truck        = 21.470910553583888 : [3, 7]
+  - Drone        = 0.0 : [3, 7]
+  - Length       = 21.470910553583888
+Operation #6:
+  - Truck        = 54.6777266050395 : [7, 11]
+  - Drone        = 29.96622269927107 : [7, 2, 11]
+  - Length       = 54.6777266050395
+Total Cost = 257.82812252430665
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-60-n10-maxradius-100.txt
+flying_range = 57.69328268990793
+TSP-ep-all   = 231.80336985103526
+sasan        = 231.8033698275438
+xufei single = 231.8033698510273
+TSP-ep-all time = 0.049802158
+sasan run time  = 5.194121844
+xufei run time  = 1.77818148
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 54.6777266050395 : [1, 7]
+  - Drone        = 48.80684401805456 : [1, 3, 7]
+  - Length       = 54.6777266050395
+Operation #2:
+  - Truck        = 46.87216658103186 : [7, 9]
+  - Drone        = 56.58342021056687 : [7, 10, 9]
+  - Length       = 56.58342021056687
+Operation #3:
+  - Truck        = 17.72004514666935 : [9, 4]
+  - Drone        = 21.73514304334049 : [9, 6, 4]
+  - Length       = 21.73514304334049
+Operation #4:
+  - Truck        = 61.465437442517235 : [4, 5]
+  - Drone        = 57.10237540849038 : [4, 8, 5]
+  - Length       = 61.465437442517235
+Operation #5:
+  - Truck        = 37.34164254957117 : [5, 11]
+  - Drone        = 34.95161253494564 : [5, 2, 11]
+  - Length       = 37.34164254957117
+Total Cost = 231.80336985103526
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-60-n10-maxradius-150.txt
+flying_range = 86.5399240348619
+TSP-ep-all   = 225.99951179872295
+sasan        = 225.99951179871823
+xufei single = 225.99951179871317
+TSP-ep-all time = 0.05523589
+sasan run time  = 5.280175565
+xufei run time  = 2.571102157
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 81.2050669484938 : [1, 5, 9]
+  - Drone        = 77.18179990285964 : [1, 8, 9]
+  - Length       = 81.2050669484938
+Operation #2:
+  - Truck        = 17.72004514666935 : [9, 4]
+  - Drone        = 21.73514304334049 : [9, 6, 4]
+  - Length       = 21.73514304334049
+Operation #3:
+  - Truck        = 63.12685640834652 : [4, 7]
+  - Drone        = 55.2805106554361 : [4, 10, 7]
+  - Length       = 63.12685640834652
+Operation #4:
+  - Truck        = 59.93244539854214 : [7, 2, 11]
+  - Drone        = 48.80684401805456 : [7, 3, 11]
+  - Length       = 59.93244539854214
+Total Cost = 225.99951179872295
+===========================================================================
+raw_status(model) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+raw_status(m) = "Model was solved to optimality (subject to tolerances), and an optimal solution is available."
+[ Info: uniform-60-n10-maxradius-200.txt
+flying_range = 1.0e6
+TSP-ep-all   = 225.99951179872295
+sasan        = 225.9995117760055
+xufei single = 225.9995117987193
+TSP-ep-all time = 0.052925008
+sasan run time  = 8.764409199
+xufei run time  = 3.872010765
+TSP-ep-all solution summary:
+Operation #1:
+  - Truck        = 81.2050669484938 : [1, 5, 9]
+  - Drone        = 77.18179990285964 : [1, 8, 9]
+  - Length       = 81.2050669484938
+Operation #2:
+  - Truck        = 17.72004514666935 : [9, 4]
+  - Drone        = 21.73514304334049 : [9, 6, 4]
+  - Length       = 21.73514304334049
+Operation #3:
+  - Truck        = 63.12685640834652 : [4, 7]
+  - Drone        = 55.2805106554361 : [4, 10, 7]
+  - Length       = 63.12685640834652
+Operation #4:
+  - Truck        = 59.93244539854214 : [7, 2, 11]
+  - Drone        = 48.80684401805456 : [7, 3, 11]
+  - Length       = 59.93244539854214
+Total Cost = 225.99951179872295
+===========================================================================
+
+julia> 

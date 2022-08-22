@@ -81,5 +81,6 @@ function solve_Optimal_TSPd(TT, DD, flying_range, bigM)
     end
 
     obj_value = objective_value(model)
+    @show raw_status(model)
     return xT_out, xD_out, yT_out, yD_out, yC_out, a_out, obj_value
 end
