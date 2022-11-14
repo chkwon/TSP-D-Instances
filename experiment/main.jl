@@ -3,6 +3,23 @@ using TSPLIB
 using Concorde
 using Statistics
 
+function print_time(total_sec)
+    h = floor(Int, total_sec / 3600)
+    m = floor(Int, (total_sec - h * 3600) / 60)
+    s = floor(Int, (total_sec - h * 3600 - m * 60))
+    ss = round(total_sec * 100) / 100
+
+    if h > 0
+        return "$(h)h $(m)m"
+    elseif m > 0
+        return "$(m)m $(s)s"
+    elseif s > 0
+        return "$(s)s"
+    else
+        return "$(ss)s"
+    end
+end
+
 function read_data(subfolder, instance)
     file = open(joinpath(@__DIR__, "..", subfolder, instance), "r")
 
@@ -59,19 +76,24 @@ function test_TSPLIB100()
     end
 end
 
-function test_agatz(dist, n_nodes; n_samples=0, device="cpu")
+function test_agatz(dist, n_nodes; DPS25=true, alpha=2, n_samples=0, device="cpu")
+    prefix = alpha == 2 ? "" : "-alpha_$(alpha)"
+    
     filenames = Dict()
-    filenames[10] = ["$(dist)-$(50 + i)-n10.txt" for i in 1:10]
-    filenames[20] = ["$(dist)-$(60 + i)-n20.txt" for i in 1:10]
-    filenames[50] = ["$(dist)-$(70 + i)-n50.txt" for i in 1:10]
-    filenames[75] = ["$(dist)-$(80 + i)-n75.txt" for i in 1:10]
-    filenames[100] = ["$(dist)-$(90 + i)-n100.txt" for i in 1:10]
-    filenames[175] = ["$(dist)-$(100 + i)-n175.txt" for i in 1:10]
-    filenames[250] = ["$(dist)-$(110 + i)-n250.txt" for i in 1:10]
+    filenames[10] = ["$(dist)$(prefix)-$(50 + i)-n10.txt" for i in 1:10]
+    filenames[20] = ["$(dist)$(prefix)-$(60 + i)-n20.txt" for i in 1:10]
+    filenames[50] = ["$(dist)$(prefix)-$(70 + i)-n50.txt" for i in 1:10]
+    filenames[75] = ["$(dist)$(prefix)-$(80 + i)-n75.txt" for i in 1:10]
+    filenames[100] = ["$(dist)$(prefix)-$(90 + i)-n100.txt" for i in 1:10]
+    filenames[175] = ["$(dist)$(prefix)-$(100 + i)-n175.txt" for i in 1:10]
+    filenames[250] = ["$(dist)$(prefix)-$(110 + i)-n250.txt" for i in 1:10]
 
     for n in n_nodes
-        n_grp = n < 25 ? 1 : Int(n / 25)
-        # n_grp = 1
+        if DPS25
+            n_grp = n < 25 ? 1 : Int(n / 25)
+        else 
+            n_grp = 1
+        end
         
         objs = Float64[]
         objs_RL = Float64[]
@@ -80,7 +102,8 @@ function test_agatz(dist, n_nodes; n_samples=0, device="cpu")
             t = time()
             for filename in filenames[n]
                 x, y, truck_cost_factor, drone_cost_factor = read_data(dist, filename)
-                
+                @assert truck_cost_factor / drone_cost_factor == alpha
+
                 # manhattan_dist_mtx = [abs(x[i]-x[j]) + abs(y[i]-y[j]) for i in 1:n, j in 1:n]
                 # euclidean_dist_mtx = [sqrt((x[i]-x[j])^2 + (y[i]-y[j])^2) for i in 1:n, j in 1:n]
                 
@@ -89,13 +112,15 @@ function test_agatz(dist, n_nodes; n_samples=0, device="cpu")
 
                 # objective_value, truck_route, drone_route = solve_tspd(truck_dist_mtx, drone_dist_mtx; n_groups=n_grp, method="TSP-ep-all")
 
-                obj, _, _ = solve_tspd(x, y, truck_cost_factor, drone_cost_factor; n_groups=n_grp, method="TSP-ep-all")
-                @show filename, obj, n_grp
+                result = solve_tspd(x, y, truck_cost_factor, drone_cost_factor; n_groups=n_grp, method="TSP-ep-all")
+                obj = result.total_cost
+                et = print_time(time() - t)
+                @show filename, obj, n_grp, et
                 push!(objs, obj)
             end
             t_dps = time() - t
 
-            open("$(dist)-n$n-DPS-n_groups_$(n_grp).txt", "w") do io 
+            open("$(dist)$(prefix)-n$n-DPS-n_groups_$(n_grp).txt", "w") do io 
                 println(io, objs)
                 println(io, mean(objs))
                 println(io, t_dps / 10)
@@ -115,7 +140,7 @@ function test_agatz(dist, n_nodes; n_samples=0, device="cpu")
             end
             t_rl = time() - t
 
-            open("$(dist)-n$n-RL-n_samples_$(n_samples).txt", "w") do io
+            open("$(dist)$(prefix)-n$n-RL-n_samples_$(n_samples).txt", "w") do io
                 println(io, objs_RL)
                 println(io, mean(objs_RL))
                 println(io, t_rl / 10)
@@ -129,11 +154,30 @@ function test_agatz(dist, n_nodes; n_samples=0, device="cpu")
 
 end
 
-#test_agatz(n_samples=1, device="cpu")
+# test_agatz(n_samples=1, device="cpu")
 
-# test_agatz("uniform", [10, 20, 50, 75, 100, 175, 250]; n_samples=0, device="cuda")
-# test_agatz("singlecenter", [10, 20, 50, 75, 100, 175, 250]; n_samples=0, device="cuda")
-# test_agatz("doublecenter", [10, 20, 50, 75, 100, 175, 250]; n_samples=0, device="cuda")
+
+
+# alpha = 2
+#test_agatz("uniform", [10, 20, 50, 75, 100, 175, 250]; alpha=alpha, n_samples=0, device="cuda")
+# test_agatz("singlecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
+# test_agatz("doublecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
+
+# alpha = 2
+# #test_agatz("uniform", [10, 20, 50, 75, 100, 175, 250]; alpha=alpha, n_samples=0, device="cuda")
+# # test_agatz("singlecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
+# # test_agatz("doublecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
+
+# alpha = 1
+# # test_agatz("uniform", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
+# test_agatz("singlecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
+# test_agatz("doublecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
+
+alpha = 3
+# test_agatz("uniform", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
+# test_agatz("singlecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
+# test_agatz("doublecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
+# test_agatz("doublecenter", [10, 100]; alpha=alpha, n_samples=0, device="cuda")
 
 # test_agatz("uniform", [20, 50, 100]; n_samples=1, device="cuda")
 # test_agatz("singlecenter", [20, 50, 100]; n_samples=1, device="cuda")
@@ -141,5 +185,14 @@ end
 
 
 # Please run these:
-test_agatz("uniform", [20, 50, 100]; n_samples=1, device="cuda")
-test_agatz("uniform", [20, 50, 100]; n_samples=4800, device="cuda")
+# test_agatz("uniform", [20, 50, 100]; n_samples=1, device="cuda")
+# test_agatz("uniform", [20, 50, 100]; n_samples=4800, device="cuda")
+
+
+# Table 4
+alpha = 2
+# test_agatz("uniform", [20, 50, 100]; DPS25=false, alpha=alpha, n_samples=0, device="cpu")
+# test_agatz("uniform", [20, 50, 100]; DPS25=true, alpha=alpha, n_samples=0, device="cpu")
+# test_agatz("uniform", [20, 50, 100]; n_samples=1, device="cpu")
+# test_agatz("uniform", [20, 50, 100]; n_samples=4800, device="cpu")
+test_agatz("uniform", [100]; n_samples=4800, device="cuda")
