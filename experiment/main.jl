@@ -154,34 +154,37 @@ function test_agatz(dist, n_nodes; DPS25=true, alpha=2, n_samples=0, device="cpu
 
 end
 
-# test_agatz(n_samples=1, device="cpu")
+# Pre-run for compilation
+alpha = 2
+test_agatz("uniform", [10]; alpha=alpha, n_samples=0, device="cpu", DPS25=true)
+
+# Aigerim paper
+alpha = 2
+test_agatz("uniform", [20, 50, 100]; alpha=alpha, n_samples=0, device="cpu", DPS25=true)  # DPS/25
+test_agatz("uniform", [20, 50, 100]; alpha=alpha, n_samples=0, device="cpu", DPS25=false) # TSP-ep-all
 
 
+# Sasan paper 
+nodes = [10, 20, 50, 75, 100, 175, 250]
+alpha = 2
+test_agatz("uniform", nodes; alpha=alpha, n_samples=0, device="cpu", DPS25=true)
+test_agatz("singlecenter", nodes; alpha=alpha, n_samples=0, device="cpu", DPS25=true)
+test_agatz("doublecenter", nodes; alpha=alpha, n_samples=0, device="cpu", DPS25=true)
 
-# alpha = 2
-#test_agatz("uniform", [10, 20, 50, 75, 100, 175, 250]; alpha=alpha, n_samples=0, device="cuda")
-# test_agatz("singlecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
-# test_agatz("doublecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
-
-# alpha = 2
-# #test_agatz("uniform", [10, 20, 50, 75, 100, 175, 250]; alpha=alpha, n_samples=0, device="cuda")
-# # test_agatz("singlecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
-# # test_agatz("doublecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
-
-# alpha = 1
-# # test_agatz("uniform", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
-# test_agatz("singlecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
-# test_agatz("doublecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
+alpha = 1
+test_agatz("uniform", nodes; alpha=alpha, n_samples=0, device="cpu", DPS25=true)
+test_agatz("singlecenter", nodes; alpha=alpha, n_samples=0, device="cpu", DPS25=true)
+test_agatz("doublecenter", nodes; alpha=alpha, n_samples=0, device="cpu", DPS25=true)
 
 alpha = 3
-# test_agatz("uniform", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
-# test_agatz("singlecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
-# test_agatz("doublecenter", [10, 20, 50, 75, 100]; alpha=alpha, n_samples=0, device="cuda")
-# test_agatz("doublecenter", [10, 100]; alpha=alpha, n_samples=0, device="cuda")
+test_agatz("uniform", nodes; alpha=alpha, n_samples=0, device="cpu", DPS25=true)
+test_agatz("singlecenter", nodes; alpha=alpha, n_samples=0, device="cpu", DPS25=true)
+test_agatz("doublecenter", nodes; alpha=alpha, n_samples=0, device="cpu", DPS25=true)
 
-# test_agatz("uniform", [20, 50, 100]; n_samples=1, device="cuda")
-# test_agatz("singlecenter", [20, 50, 100]; n_samples=1, device="cuda")
-# test_agatz("doublecenter", [20, 50, 100]; n_samples=1, device="cuda")
+
+
+
+
 
 
 # Please run these:
@@ -190,9 +193,10 @@ alpha = 3
 
 
 # Table 4
-alpha = 2
+# alpha = 2
 # test_agatz("uniform", [20, 50, 100]; DPS25=false, alpha=alpha, n_samples=0, device="cpu")
 # test_agatz("uniform", [20, 50, 100]; DPS25=true, alpha=alpha, n_samples=0, device="cpu")
 # test_agatz("uniform", [20, 50, 100]; n_samples=1, device="cpu")
 # test_agatz("uniform", [20, 50, 100]; n_samples=4800, device="cpu")
-test_agatz("uniform", [100]; n_samples=4800, device="cuda")
+# test_agatz("uniform", [20]; n_samples=2, device="cpu")
+# test_agatz("uniform", [100]; n_samples=4800, device="cpu")
