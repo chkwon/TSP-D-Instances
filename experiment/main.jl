@@ -159,9 +159,9 @@ alpha = 2
 test_agatz("uniform", [10]; alpha=alpha, n_samples=0, device="cpu", DPS25=true)
 
 # Aigerim paper
-alpha = 2
-test_agatz("uniform", [20, 50, 100]; alpha=alpha, n_samples=0, device="cpu", DPS25=true)  # DPS/25
-test_agatz("uniform", [20, 50, 100]; alpha=alpha, n_samples=0, device="cpu", DPS25=false) # TSP-ep-all
+# alpha = 2
+# test_agatz("uniform", [20, 50, 100]; alpha=alpha, n_samples=0, device="cpu", DPS25=true)  # DPS/25
+# test_agatz("uniform", [20, 50, 100]; alpha=alpha, n_samples=0, device="cpu", DPS25=false) # TSP-ep-all
 
 
 # Sasan paper 
